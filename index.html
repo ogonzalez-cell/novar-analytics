@@ -1520,7 +1520,7 @@ function buildMonth(y,m){
     let cls='cal-d';
     if(dis)cls+=' disabled';
     else{if(isS)cls+=' range-start';if(isE)cls+=' range-end';if(inR)cls+=' in-range';}
-    h+=`<button class="${cls}"${dis?'':` data-date="${s}"`}>${d}</button>`;
+    h+=`<button class="${cls}"${dis?'':` data-date="${s}" onclick="calClick('${s}')"`}>${d}</button>`;
   }
   return h+'</div></div>';
 }
@@ -2035,12 +2035,7 @@ function moveCamp(d){cPg=Math.max(0,cPg+d);renderCampsTable();}
 
 window.addEventListener('load',function(){
   renderAll();setupBarEvents();window.addEventListener('resize',drawBarChart);
-  // Calendar event delegation — no inline handlers needed
   const pop=document.getElementById('cal-popup');
-  pop.addEventListener('click',function(e){
-    const b=e.target.closest('[data-date]');
-    if(b)calClick(b.dataset.date);
-  });
   pop.addEventListener('mouseover',function(e){
     const b=e.target.closest('[data-date]');
     if(b&&_cal.selF&&!_cal.selT){_cal.hov=D(b.dataset.date);_pendingEnd=_cal.hov;renderCal();}
