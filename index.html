@@ -10,40 +10,14 @@ body{background:var(--bg);color:var(--ink);font-family:'Segoe UI',system-ui,-app
 .hdr-tab{background:rgba(255,255,255,.06);border:1px solid transparent;color:var(--ink3);padding:6px 16px;border-radius:20px;cursor:pointer;font-size:14px;font-weight:600;transition:all .15s}
 .hdr-tab.active{background:#FF9900;color:#000;border-color:#FF9900}
 .hdr-tab:hover:not(.active){background:rgba(255,255,255,.1);color:var(--ink)}
-.date-bar{background:#141414;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;gap:12px;align-items:center;position:relative;z-index:150}
-.date-trigger{position:relative}
-.date-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:10px 18px;cursor:pointer;display:flex;align-items:center;gap:14px;color:var(--ink);transition:border-color .15s;min-width:360px}
-.date-btn:hover{border-color:var(--accent)}
+.date-bar{background:#141414;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;z-index:10}
 .date-icon{font-size:18px;flex-shrink:0}
-.date-main{font-size:15px;font-weight:600;color:var(--ink);line-height:1.3}
-.date-vs{font-size:12px;color:var(--ink4);margin-top:2px}
-.date-caret{margin-left:auto;color:var(--ink4);font-size:11px;transition:transform .2s}
-.date-caret.open{transform:rotate(180deg)}
-#cal-bd{display:none!important}
-.cal-popup{position:absolute;top:calc(100% + 6px);left:0;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);box-shadow:0 12px 40px rgba(0,0,0,.5);padding:16px;z-index:299;display:none;width:480px}
-.cal-popup.open{display:block}
-.cal-nav-row{display:flex;align-items:center;margin-bottom:16px;gap:8px}
-.cal-nav-btn{background:var(--surface2);border:1px solid var(--border2);border-radius:6px;width:32px;height:32px;cursor:pointer;color:var(--ink3);font-size:18px;display:flex;align-items:center;justify-content:center}
-.cal-nav-btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
-.cal-period-label{flex:1;text-align:center;font-size:14px;font-weight:600;color:var(--ink)}
-.cal-months{display:flex;gap:24px}
-.cal-month{flex:1}
-.cal-month-name{font-size:13px;font-weight:700;color:var(--ink3);text-align:center;margin-bottom:10px;text-transform:uppercase;letter-spacing:.8px}
-.cal-grid{display:grid;grid-template-columns:repeat(7,30px);gap:2px;justify-content:center}
-.cal-dh{width:34px;height:22px;font-size:11px;font-weight:700;color:var(--ink4);text-align:center;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
-.cal-dh{width:30px;height:20px;font-size:10px;font-weight:700;color:var(--ink4);text-align:center;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
-.cal-d{width:30px;height:28px;border:none;background:none;border-radius:4px;cursor:pointer;font-size:12px;color:var(--ink3);display:flex;align-items:center;justify-content:center;transition:background .1s}
-.cal-d:hover:not(.disabled){background:var(--accent);color:#000}
-.cal-d.in-range{background:rgba(255,153,0,.15);border-radius:0;color:var(--ink2)}
-.cal-d.range-start{background:var(--accent);color:#000;font-weight:700;border-radius:4px 0 0 4px}
-.cal-d.range-end{background:var(--accent);color:#000;font-weight:700;border-radius:0 4px 4px 0}
-.cal-d.range-start.range-end{border-radius:4px}
-.cal-d.today{color:var(--accent);font-weight:700}
-.cal-d.disabled{color:var(--ink4);cursor:default;opacity:.35}
-.cal-footer{display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.cal-hint{font-size:13px;color:var(--ink4);flex:1}
-.cal-apply{background:var(--accent);border:none;color:#000;font-weight:700;padding:8px 20px;border-radius:var(--r-sm);cursor:pointer;font-size:14px}
-.cal-cancel{background:none;border:1px solid var(--border2);color:var(--ink3);padding:8px 16px;border-radius:var(--r-sm);cursor:pointer;font-size:14px}
+.date-inputs{display:flex;align-items:center;gap:8px}
+.date-native{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:8px 10px;color:var(--ink);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .15s;color-scheme:dark}
+.date-native:focus{outline:none;border-color:var(--accent)}
+.date-native:hover{border-color:var(--accent)}
+.date-arrow{color:var(--ink4);font-size:14px;flex-shrink:0}
+.date-vs{font-size:12px;color:var(--ink4)}
 .main{max-width:1440px;margin:0 auto;padding:20px}
 .sec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:4px}
 .sec-title{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:14px}
@@ -99,8 +73,8 @@ tbody tr:hover td{background:var(--surface2)}
 .alert-bar{background:rgba(239,107,90,.1);border:1px solid rgba(239,107,90,.3);border-radius:var(--r-sm);padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--bad)}
 #tt{position:fixed;background:#1A1A1A;border:1px solid #333;color:#F0F0F0;padding:10px 14px;border-radius:6px;font-size:13px;pointer-events:none;z-index:9999;box-shadow:0 6px 20px rgba(0,0,0,.6);display:none;max-width:210px;line-height:1.8}
 #tt b{color:#FF9900}
-@media(max-width:700px){.donut-row{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.main{padding:12px}.cal-popup{min-width:320px}.cal-months{flex-direction:column}.date-btn{min-width:unset}}
-.preset-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--border2);margin-bottom:2px}
+@media(max-width:700px){.donut-row{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.main{padding:12px}.date-bar{flex-direction:column;align-items:flex-start}}
+.preset-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-left:auto}
 .preset-btn{background:var(--surface2);border:1px solid var(--border2);color:var(--ink4);padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:all .15s;white-space:nowrap}
 .preset-btn:hover:not(.active){background:rgba(255,255,255,.08);color:var(--ink)}
 .preset-btn.active{background:var(--accent);color:#000;border-color:var(--accent)}
@@ -129,37 +103,20 @@ tbody tr:hover td{background:var(--surface2)}
 </div>
 
 <div class="date-bar">
-  <div class="date-trigger">
-    <button class="date-btn" onclick="toggleCal()" id="date-btn">
-      <span class="date-icon">📅</span>
-      <div>
-        <div class="date-main" id="date-main">—</div>
-        <div class="date-vs" id="date-vs">vs —</div>
-      </div>
-      <span class="date-caret" id="date-caret">▼</span>
-    </button>
-    <div id="cal-bd"></div>
-    <div class="cal-popup" id="cal-popup">
-      <div class="preset-strip" id="preset-strip">
-        <button class="preset-btn" data-range="mtd" onclick="setRange('mtd');closeCal()">Mes actual</button>
-        <button class="preset-btn" data-range="prev" onclick="setRange('prev');closeCal()">Mes anterior</button>
-        <div class="date-sep"></div>
-        <button class="preset-btn" data-range="q2" onclick="setRange('q2');closeCal()">Q2 2026</button>
-        <button class="preset-btn" data-range="ytd" onclick="setRange('ytd');closeCal()">YTD 2026</button>
-        <button class="preset-btn" data-range="y2025" onclick="setRange('y2025');closeCal()">Todo 2025</button>
-      </div>
-      <div class="cal-nav-row" style="margin-top:14px">
-        <button class="cal-nav-btn" id="cal-prev">‹</button>
-        <span class="cal-period-label" id="cal-period-label"></span>
-        <button class="cal-nav-btn" id="cal-next">›</button>
-      </div>
-      <div class="cal-months"><div id="cal-m1"></div><div id="cal-m2"></div></div>
-      <div class="cal-footer">
-        <span class="cal-hint" id="cal-hint">Selecciona fecha inicio</span>
-        <button class="cal-cancel" id="cal-cancel-btn">Cancelar</button>
-        <button class="cal-apply" id="cal-apply-btn">✓ Aplicar</button>
-      </div>
-    </div>
+  <span class="date-icon">📅</span>
+  <div class="date-inputs">
+    <input type="date" id="dateFrom" class="date-native" aria-label="Fecha inicio" onchange="onDateChange()">
+    <span class="date-arrow">→</span>
+    <input type="date" id="dateTo" class="date-native" aria-label="Fecha fin" onchange="onDateChange()">
+  </div>
+  <div class="date-vs" id="date-vs">vs —</div>
+  <div class="preset-strip">
+    <button class="preset-btn" data-range="mtd" onclick="setRange('mtd')">Mes actual</button>
+    <button class="preset-btn" data-range="prev" onclick="setRange('prev')">Mes anterior</button>
+    <div class="date-sep"></div>
+    <button class="preset-btn" data-range="q2" onclick="setRange('q2')">Q2 2026</button>
+    <button class="preset-btn" data-range="ytd" onclick="setRange('ytd')">YTD 2026</button>
+    <button class="preset-btn" data-range="y2025" onclick="setRange('y2025')">Todo 2025</button>
   </div>
 </div>
 
@@ -1447,13 +1404,9 @@ const CAT_COLORS=['#FF9900','#4CAF81'];
 const MO=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const MOS_S=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 function dateLbl(iso){const p=iso.split('-');return parseInt(p[2])+' '+MOS_S[parseInt(p[1])-1];}
-const DW=['L','M','X','J','V','S','D'];
-const CAL_MIN=D('2025-01-01');const CAL_MAX=(function(){const t=new Date();t.setHours(0,0,0,0);return t;})();
 
 let market='ES',rangeKey='mtd',pPg=0,cPg=0;
 let customFrom=null,customTo=null;
-let _cal={open:false,vy:2026,vm:5,selF:null,selT:null,hov:null};
-let _pendingEnd=null;
 let _barMeta={rows:[],type:'daily',mg:{top:20,right:20,bottom:46,left:66},W:0};
 
 function ds(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
@@ -1479,71 +1432,23 @@ function rangeFromKey(k){
   return m[k]||m.mtd;
 }
 
-function toggleCal(){
-  if(_cal.open){closeCal();return;}
-  _cal.open=true;
-  const pop=document.getElementById('cal-popup');
-  pop.classList.add('open');
-  document.getElementById('date-caret').classList.add('open');
-  const today=new Date();_cal.vy=today.getFullYear();_cal.vm=today.getMonth();_cal.selF=null;_cal.selT=null;_cal.hov=null;
-  document.querySelectorAll('.preset-btn').forEach(b=>b.classList.toggle('active',b.dataset.range===rangeKey));
-  renderCal();
-  setTimeout(function(){
-    _cal._docClose=function(e){const path=e.composedPath?e.composedPath():[e.target];if(path.indexOf(pop)===-1&&path.indexOf(document.getElementById('date-btn'))===-1){closeCal();}};
-    document.addEventListener('click',_cal._docClose);
-  },0);
-}
-function closeCal(){
-  _cal.open=false;
-  document.getElementById('cal-popup').classList.remove('open');
-  document.getElementById('date-caret').classList.remove('open');
-  if(_cal._docClose){document.removeEventListener('click',_cal._docClose);_cal._docClose=null;}
-}
-function navCal(d){_cal.vm+=d;if(_cal.vm>11){_cal.vm=0;_cal.vy++;}if(_cal.vm<0){_cal.vm=11;_cal.vy--;}renderCal();}
-function calClick(s){const d=D(s);if(!_cal.selF||(_cal.selF&&_cal.selT)){_cal.selF=d;_cal.selT=null;_pendingEnd=null;}else{if(d<_cal.selF){_cal.selT=_cal.selF;_cal.selF=d;}else{_cal.selT=d;}_pendingEnd=_cal.selT;}_cal.hov=null;renderCal();}
-function applyCalRange(){
-  if(!_cal.selF)return;
-  const endDate=_cal.selT||_pendingEnd||_cal.selF;
+function onDateChange(){
+  const f=document.getElementById('dateFrom').value;
+  const t=document.getElementById('dateTo').value;
+  if(!f||!t)return;
+  const df=D(f),dt=D(t);
+  if(dt<df){document.getElementById('dateTo').value=f;return;}
   rangeKey='custom';
-  if(endDate>=_cal.selF){customFrom=new Date(_cal.selF);customTo=new Date(endDate);}
-  else{customFrom=new Date(endDate);customTo=new Date(_cal.selF);}
-  closeCal();renderAll();
-}
-
-function buildMonth(y,m){
-  const first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
-  const start=first===0?6:first-1;
-  const ef=_cal.selF,et=_cal.selT||_cal.hov;
-  let h=`<div><div class="cal-month-name">${MO[m]} ${y}</div><div class="cal-grid">`;
-  DW.forEach(d=>{h+=`<div class="cal-dh">${d}</div>`;});
-  for(let i=0;i<start;i++)h+='<div></div>';
-  for(let d=1;d<=days;d++){
-    const s=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const dO=D(s);const dis=dO<CAL_MIN||dO>CAL_MAX;
-    const isS=ef&&ds(ef)===s,isE=et&&ds(et)===s;
-    const inR=ef&&et&&dO>ef&&dO<et;
-    let cls='cal-d';
-    if(dis)cls+=' disabled';
-    else{if(isS)cls+=' range-start';if(isE)cls+=' range-end';if(inR)cls+=' in-range';}
-    h+=`<button class="${cls}"${dis?'':` data-date="${s}" onclick="calClick('${s}')"`}>${d}</button>`;
-  }
-  return h+'</div></div>';
-}
-function renderCal(){
-  let m2=_cal.vm+1,y2=_cal.vy;if(m2>11){m2=0;y2++;}
-  document.getElementById('cal-m1').innerHTML=buildMonth(_cal.vy,_cal.vm);
-  document.getElementById('cal-m2').innerHTML=buildMonth(y2,m2);
-  document.getElementById('cal-period-label').textContent=`${MO[_cal.vm]} ${_cal.vy} — ${MO[m2]} ${y2}`;
-  const h=document.getElementById('cal-hint');
-  if(!_cal.selF)h.textContent='Selecciona fecha inicio';
-  else if(!_cal.selT)h.textContent='Inicio: '+dFmt(_cal.selF)+' — selecciona fecha fin';
-  else h.textContent=dFmt(_cal.selF)+' → '+dFmt(_cal.selT);
+  customFrom=df;customTo=dt;
+  document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));
+  renderAll();
 }
 
 function updateDateDisplay(){
   const{from,to}=rangeFromKey(rangeKey);
   const pf=priorYr(from),pt=priorYr(to);
-  document.getElementById('date-main').textContent=dFmt(from)+' — '+dFmt(to);
+  document.getElementById('dateFrom').value=ds(from);
+  document.getElementById('dateTo').value=ds(to);
   document.getElementById('date-vs').textContent='vs '+dFmt(pf)+' — '+dFmt(pt)+' (año anterior)';
 }
 
@@ -1921,6 +1826,9 @@ const PNL_DATA={
 
 function setRange(k){
   rangeKey=k;
+  const{from,to}=rangeFromKey(k);
+  document.getElementById('dateFrom').value=ds(from);
+  document.getElementById('dateTo').value=ds(to);
   document.querySelectorAll('.preset-btn').forEach(b=>b.classList.toggle('active',b.dataset.range===k));
   renderAll();
 }
@@ -2040,17 +1948,5 @@ function moveCamp(d){cPg=Math.max(0,cPg+d);renderCampsTable();}
 
 window.addEventListener('load',function(){
   renderAll();setupBarEvents();window.addEventListener('resize',drawBarChart);
-  const pop=document.getElementById('cal-popup');
-  pop.addEventListener('mouseover',function(e){
-    const b=e.target.closest('[data-date]');
-    if(b&&_cal.selF&&!_cal.selT){_cal.hov=D(b.dataset.date);_pendingEnd=_cal.hov;renderCal();}
-  });
-  pop.addEventListener('mouseout',function(e){
-    if(e.target.closest('[data-date]')&&_cal.hov){_cal.hov=null;renderCal();}
-  });
-  document.getElementById('cal-prev').addEventListener('click',function(){navCal(-1);});
-  document.getElementById('cal-next').addEventListener('click',function(){navCal(1);});
-  document.getElementById('cal-cancel-btn').addEventListener('click',closeCal);
-  document.getElementById('cal-apply-btn').addEventListener('click',applyCalRange);
 });
 </script>
