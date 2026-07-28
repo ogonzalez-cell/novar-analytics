@@ -1489,7 +1489,7 @@ function toggleCal(){
   document.querySelectorAll('.preset-btn').forEach(b=>b.classList.toggle('active',b.dataset.range===rangeKey));
   renderCal();
   setTimeout(function(){
-    _cal._docClose=function(e){if(!pop.contains(e.target)&&!document.getElementById('date-btn').contains(e.target)){closeCal();}};
+    _cal._docClose=function(e){const path=e.composedPath?e.composedPath():[e.target];if(path.indexOf(pop)===-1&&path.indexOf(document.getElementById('date-btn'))===-1){closeCal();}};
     document.addEventListener('click',_cal._docClose);
   },0);
 }
