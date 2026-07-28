@@ -100,7 +100,7 @@ tbody tr:hover td{background:var(--surface2)}
 #tt{position:fixed;background:#1A1A1A;border:1px solid #333;color:#F0F0F0;padding:10px 14px;border-radius:6px;font-size:13px;pointer-events:none;z-index:9999;box-shadow:0 6px 20px rgba(0,0,0,.6);display:none;max-width:210px;line-height:1.8}
 #tt b{color:#FF9900}
 @media(max-width:700px){.donut-row{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.main{padding:12px}.cal-popup{min-width:320px}.cal-months{flex-direction:column}.date-btn{min-width:unset}}
-.preset-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.preset-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--border2);margin-bottom:2px}
 .preset-btn{background:var(--surface2);border:1px solid var(--border2);color:var(--ink4);padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:all .15s;white-space:nowrap}
 .preset-btn:hover:not(.active){background:rgba(255,255,255,.08);color:var(--ink)}
 .preset-btn.active{background:var(--accent);color:#000;border-color:var(--accent)}
@@ -140,7 +140,15 @@ tbody tr:hover td{background:var(--surface2)}
     </button>
     <div id="cal-bd"></div>
     <div class="cal-popup" id="cal-popup">
-      <div class="cal-nav-row">
+      <div class="preset-strip" id="preset-strip">
+        <button class="preset-btn" data-range="mtd" onclick="setRange('mtd');closeCal()">Mes actual</button>
+        <button class="preset-btn" data-range="prev" onclick="setRange('prev');closeCal()">Mes anterior</button>
+        <div class="date-sep"></div>
+        <button class="preset-btn" data-range="q2" onclick="setRange('q2');closeCal()">Q2 2026</button>
+        <button class="preset-btn" data-range="ytd" onclick="setRange('ytd');closeCal()">YTD 2026</button>
+        <button class="preset-btn" data-range="y2025" onclick="setRange('y2025');closeCal()">Todo 2025</button>
+      </div>
+      <div class="cal-nav-row" style="margin-top:14px">
         <button class="cal-nav-btn" id="cal-prev">‹</button>
         <span class="cal-period-label" id="cal-period-label"></span>
         <button class="cal-nav-btn" id="cal-next">›</button>
@@ -1478,7 +1486,7 @@ function toggleCal(){
   pop.classList.toggle('open',_cal.open);
   bd.style.display=_cal.open?'block':'none';
   document.getElementById('date-caret').classList.toggle('open',_cal.open);
-  if(_cal.open){const today=new Date();_cal.vy=today.getFullYear();_cal.vm=today.getMonth();_cal.selF=null;_cal.selT=null;_cal.hov=null;renderCal();}
+  if(_cal.open){const today=new Date();_cal.vy=today.getFullYear();_cal.vm=today.getMonth();_cal.selF=null;_cal.selT=null;_cal.hov=null;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.toggle('active',b.dataset.range===rangeKey));renderCal();}
 }
 function closeCal(){
   _cal.open=false;
