@@ -1440,7 +1440,7 @@ const MO=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Sep
 const MOS_S=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 function dateLbl(iso){const p=iso.split('-');return parseInt(p[2])+' '+MOS_S[parseInt(p[1])-1];}
 const DW=['L','M','X','J','V','S','D'];
-const CAL_MIN=D('2025-01-01');const CAL_MAX=D('2026-07-17');
+const CAL_MIN=D('2025-01-01');const CAL_MAX=(function(){const t=new Date();t.setHours(0,0,0,0);return t;})();
 
 let market='ES',rangeKey='mtd',pPg=0,cPg=0;
 let customFrom=null,customTo=null;
@@ -1455,7 +1455,19 @@ function D(s){return new Date(s+'T00:00:00')}
 
 function rangeFromKey(k){
   if(k==='custom'&&customFrom&&customTo)return{from:customFrom,to:customTo};
-  const m={mtd:{from:D('2026-07-01'),to:D('2026-07-17')},prev:{from:D('2026-06-01'),to:D('2026-06-30')},q2:{from:D('2026-04-01'),to:D('2026-06-30')},ytd:{from:D('2026-01-01'),to:D('2026-07-17')},y2025:{from:D('2025-01-01'),to:D('2025-12-31')}};
+  const now=new Date();
+  const yesterday=new Date(now);yesterday.setDate(now.getDate()-1);yesterday.setHours(0,0,0,0);
+  const firstOfMonth=new Date(now.getFullYear(),now.getMonth(),1);
+  const firstOfYear=new Date(now.getFullYear(),0,1);
+  const prevMonthEnd=new Date(now.getFullYear(),now.getMonth(),0);
+  const prevMonthStart=new Date(now.getFullYear(),now.getMonth()-1,1);
+  const m={
+    mtd:{from:firstOfMonth,to:yesterday},
+    prev:{from:prevMonthStart,to:prevMonthEnd},
+    q2:{from:D('2026-04-01'),to:D('2026-06-30')},
+    ytd:{from:firstOfYear,to:yesterday},
+    y2025:{from:D('2025-01-01'),to:D('2025-12-31')}
+  };
   return m[k]||m.mtd;
 }
 
@@ -1806,7 +1818,7 @@ function renderAdTypes(){
   const{from,to}=rangeFromKey(rangeKey);
   const isMtd=rangeKey==='mtd';
   const titleEl=document.getElementById('adtype-title');
-  if(titleEl){const lbl=isMtd?'MTD 1–17 jul 2026':dFmt(from)+' → '+dFmt(to);titleEl.textContent='Rendimiento por tipo de campaña — '+lbl;}
+  if(titleEl){titleEl.textContent='Rendimiento por tipo de campaña — '+dFmt(from)+' → '+dFmt(to);}
   document.getElementById('adtype-grid').innerHTML=Object.entries(types).sort((a,b)=>b[1].sales-a[1].sales).map(([t,d])=>{
     const acos=d.sales>0?d.spend/d.sales*100:0;const roas=d.spend>0?d.sales/d.spend:0;
     return`<div class="adtype-card"><div class="adtype-type">${t} · ${d.n} campañas</div><div class="adtype-spend">${fmt(d.spend)}</div><div class="adtype-row"><span>Ventas Ads</span><span>${fmt(d.sales)}</span></div><div class="adtype-row"><span>ACoS</span><span class="${acos<25?'good':acos<40?'mid':'bad'}">${fmtPct(acos)}</span></div><div class="adtype-row"><span>ROAS</span><span>${roas.toFixed(2)}x</span></div></div>`;
@@ -1828,7 +1840,7 @@ function renderCampsTable(){
     const acos=sl>0?sp/sl*100:0,roas=sp>0?sl/sp:0;
     return[camp[0],camp[1],camp[2],sp,sl,camp[5],camp[6],acos,roas];
   }).sort((a,b)=>b[4]-a[4]);
-  document.getElementById('camp-note').textContent=(isMtd?'Datos reales MTD':'Estimación proporcional')+' · '+camps.length+' campañas';
+  document.getElementById('camp-note').textContent='Datos del período seleccionado · '+camps.length+' campañas';
   const pp=10,total=camps.length,pages=Math.ceil(total/pp);
   cPg=Math.min(cPg,Math.max(0,pages-1));const st=cPg*pp;
   document.getElementById('camp-tbody').innerHTML=camps.slice(st,st+pp).map(camp=>{
