@@ -1679,15 +1679,15 @@ function drawBarChart(){
   const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
   _barMeta.W=W;
   document.getElementById('chart-title').textContent='Ventas por día vs Año Anterior';
-  if(!displayRows.length){ctx.fillStyle='#666';ctx.textAlign='center';ctx.font='14px system-ui';ctx.fillText('Sin datos para el período seleccionado',W/2,H/2);return;}
+  if(!rows.length){ctx.fillStyle='#666';ctx.textAlign='center';ctx.font='14px system-ui';ctx.fillText('Sin datos para el período seleccionado',W/2,H/2);return;}
   const mg={top:18,right:16,bottom:46,left:66};_barMeta.mg=mg;
   const cW=W-mg.left-mg.right,cH=H-mg.top-mg.bottom;
-  const cur=displayRows.map(r=>r[1]||0);
-  const pri=displayRows.map(r=>r[6]||0);
+  const cur=rows.map(r=>r[1]||0);
+  const pri=rows.map(r=>r[6]||0);
   const maxV=Math.max(...cur,...pri,1)*1.12;
-  const n=displayRows.length;const bw=cW/n;const sw=Math.max(2,Math.min(bw*0.38,26));
+  const n=rows.length;const bw=cW/n;const sw=Math.max(2,Math.min(bw*0.38,26));
   for(let i=0;i<=4;i++){const y=mg.top+cH-cH*i/4;ctx.strokeStyle='#2A2A2A';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(mg.left,y);ctx.lineTo(mg.left+cW,y);ctx.stroke();ctx.fillStyle='#606060';ctx.textAlign='right';ctx.font='11px system-ui';ctx.fillText('€'+fmtK(maxV*i/4),mg.left-5,y+4);}
-  displayRows.forEach((r,i)=>{
+  rows.forEach((r,i)=>{
     const x=mg.left+i*bw+bw/2;
     const hC=cur[i]/maxV*cH;const hP=pri[i]/maxV*cH;
     ctx.fillStyle='rgba(80,80,80,.5)';if(hP>0)ctx.fillRect(x-sw,mg.top+cH-hP,sw,hP);
