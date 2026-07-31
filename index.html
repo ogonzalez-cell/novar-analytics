@@ -103,12 +103,14 @@ tbody tr:hover td{background:var(--surface2)}
 .pnl-total td:first-child{color:var(--accent)!important}
 .pnl-section td{background:var(--surface3)!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.8px;color:var(--accent)!important;font-weight:700;padding:5px 14px!important}
 .pnl-indent{padding-left:28px!important}
+.chart-img{display:none}
 .pdf-btn{background:rgba(255,255,255,.06);border:1px solid var(--border2);color:var(--ink3);padding:6px 16px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:all .15s;white-space:nowrap;margin-left:8px;font-family:inherit}
 .pdf-btn:hover{background:rgba(255,153,0,.12);border-color:#FF9900;color:#FF9900}
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   :root{--bg:#fff;--surface:#fff;--surface2:#f5f5f5;--surface3:#eee;--ink:#1A1A1A;--ink2:#333;--ink3:#555;--ink4:#777;--border:#e0e0e0;--border2:#ccc}
   #auth-overlay,#pdf-btn,.date-bar,.hdr-tabs,#tt,.pag,.alert-bar,.preset-strip,.date-icon{display:none!important}
+  canvas{display:none!important}.chart-img{display:block!important}
   body{background:#fff!important}
   .hdr{position:static!important;background:#fff!important;border-bottom:2px solid #FF9900!important}
   .hdr-brand{color:#1A1A1A!important}.hdr-brand span{color:#FF9900!important}
@@ -176,7 +178,7 @@ tbody tr:hover td{background:var(--surface2)}
           <span><span class="legend-dot" style="background:#444"></span>2025</span>
         </div>
       </div>
-      <div style="margin-top:14px"><canvas id="bar-chart" style="height:280px;cursor:crosshair;display:block"></canvas></div>
+      <div style="margin-top:14px"><canvas id="bar-chart" style="height:280px;cursor:crosshair;display:block"></canvas><img id="bar-chart-img" class="chart-img" style="height:280px"></div>
     </div>
   </div>
   <div class="section">
@@ -185,14 +187,14 @@ tbody tr:hover td{background:var(--surface2)}
       <div class="donut-card">
         <div class="donut-card-title">Inversión por categoría</div>
         <div class="donut-wrap">
-          <canvas id="donut-spend" style="flex-shrink:0;cursor:crosshair"></canvas>
+          <canvas id="donut-spend" style="flex-shrink:0;cursor:crosshair"></canvas><img id="donut-spend-img" class="chart-img" style="flex-shrink:0">
           <div class="donut-legend" id="donut-spend-legend"></div>
         </div>
       </div>
       <div class="donut-card">
         <div class="donut-card-title">Ventas Ads por categoría</div>
         <div class="donut-wrap">
-          <canvas id="donut-sales" style="flex-shrink:0;cursor:crosshair"></canvas>
+          <canvas id="donut-sales" style="flex-shrink:0;cursor:crosshair"></canvas><img id="donut-sales-img" class="chart-img" style="flex-shrink:0">
           <div class="donut-legend" id="donut-sales-legend"></div>
         </div>
       </div>
@@ -1643,7 +1645,7 @@ function drawBarChart(){
   const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
   _barMeta.W=W;
   document.getElementById('chart-title').textContent='Ventas por día vs Año Anterior';
-  if(!rows.length){ctx.fillStyle='#666';ctx.textAlign='center';ctx.font='14px system-ui';ctx.fillText('Sin datos para el período seleccionado',W/2,H/2);return;}
+  if(!rows.length){ctx.fillStyle='#666';ctx.textAlign='center';ctx.font='14px system-ui';ctx.fillText('Sin datos para el período seleccionado',W/2,H/2);var _bci=document.getElementById('bar-chart-img');if(_bci){_bci.src=canvas.toDataURL('image/png');_bci.style.width=W+'px';}return;}
   const mg={top:18,right:16,bottom:46,left:66};_barMeta.mg=mg;
   const cW=W-mg.left-mg.right,cH=H-mg.top-mg.bottom;
   const cur=rows.map(r=>r[1]||0);
@@ -1659,6 +1661,7 @@ function drawBarChart(){
     const step=n<=17?1:n<=32?2:Math.ceil(n/14);
     if(i%step===0||i===n-1){ctx.fillStyle='#606060';ctx.textAlign='center';ctx.font='10px system-ui';ctx.fillText(dateLbl(r[0]),x+sw/2,H-mg.bottom+14);}
   });
+  var _bci=document.getElementById('bar-chart-img');if(_bci){_bci.src=canvas.toDataURL('image/png');_bci.style.width=W+'px';}
 }
 function setupBarEvents(){
   const c=document.getElementById('bar-chart');if(!c)return;
@@ -1684,7 +1687,7 @@ function drawDonut(id,data,colors){
   el.width=S*dpr;el.height=S*dpr;
   const ctx=el.getContext('2d');ctx.scale(dpr,dpr);
   const total=data.reduce((s,d)=>s+d.v,0);
-  if(!total){ctx.fillStyle='#555';ctx.textAlign='center';ctx.font='13px system-ui';ctx.fillText('—',S/2,S/2+5);return;}
+  if(!total){ctx.fillStyle='#555';ctx.textAlign='center';ctx.font='13px system-ui';ctx.fillText('—',S/2,S/2+5);var _dci0=document.getElementById(id+'-img');if(_dci0){_dci0.src=el.toDataURL('image/png');_dci0.style.width=S+'px';_dci0.style.height=S+'px';}return;}
   const cx=S/2,cy=S/2,OR=S/2-5,IR=OR*0.58;
   let ang=-Math.PI/2;
   data.forEach((d,i)=>{
@@ -1695,6 +1698,7 @@ function drawDonut(id,data,colors){
   ctx.beginPath();ctx.arc(cx,cy,IR,0,Math.PI*2);ctx.fillStyle='#1C1C1C';ctx.fill();
   ctx.fillStyle='#F0F0F0';ctx.textAlign='center';ctx.font=`bold 13px system-ui`;
   ctx.fillText('€'+fmtK(total),cx,cy+5);
+  var _dci=document.getElementById(id+'-img');if(_dci){_dci.src=el.toDataURL('image/png');_dci.style.width=S+'px';_dci.style.height=S+'px';}
 }
 function donutTip(id,data,colors){
   const el=document.getElementById(id);if(!el)return;
@@ -1992,29 +1996,7 @@ function switchMarket(m){market=m;document.querySelectorAll('.hdr-tab').forEach(
 function moveProd(d){pPg=Math.max(0,pPg+d);renderProdsTable();}
 function moveCamp(d){cPg=Math.max(0,cPg+d);renderCampsTable();}
 
-function exportPDF(){
-  window.removeEventListener('resize',drawBarChart);
-  drawBarChart();renderDonuts();
-  const swaps=[];
-  document.querySelectorAll('canvas').forEach(function(cv){
-    if(!cv.width||!cv.height)return;
-    const img=document.createElement('img');
-    img.src=cv.toDataURL('image/png');
-    const w=cv.style.width||cv.offsetWidth+'px';
-    const h=cv.style.height||cv.offsetHeight+'px';
-    img.style.cssText='width:'+w+';height:'+h+';display:block';
-    cv.parentNode.insertBefore(img,cv);
-    cv.style.display='none';
-    swaps.push({cv:cv,img:img});
-  });
-  function restore(){
-    swaps.forEach(function(s){s.cv.style.display='';s.img.remove();});
-    window.addEventListener('resize',drawBarChart);
-    window.removeEventListener('afterprint',restore);
-  }
-  window.addEventListener('afterprint',restore);
-  window.print();
-}
+function exportPDF(){window.print();}
 function authCheck(){
   const v=document.getElementById('auth-pwd').value;
   if(v==='Novar2026'){sessionStorage.setItem('novar_auth','ok');document.getElementById('auth-overlay').classList.add('hidden');}
