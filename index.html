@@ -138,7 +138,7 @@ tbody tr:hover td{background:var(--surface2)}
     <button class="hdr-tab active" onclick="switchMarket('ES')">🇪🇸 España</button>
     <button class="hdr-tab" onclick="switchMarket('FR')">🇫🇷 France</button>
   </div>
-  <button id="pdf-btn" class="pdf-btn" onclick="window.print()">📄 Exportar PDF</button>
+  <button id="pdf-btn" class="pdf-btn" onclick="exportPDF()">📄 Exportar PDF</button>
 </div>
 
 <div class="date-bar">
@@ -1992,6 +1992,24 @@ function switchMarket(m){market=m;document.querySelectorAll('.hdr-tab').forEach(
 function moveProd(d){pPg=Math.max(0,pPg+d);renderProdsTable();}
 function moveCamp(d){cPg=Math.max(0,cPg+d);renderCampsTable();}
 
+function exportPDF(){
+  // Snapshot all canvases as <img> so any PDF engine (incl. MS Print to PDF) sees them
+  const swaps=[];
+  document.querySelectorAll('canvas').forEach(function(cv){
+    const img=document.createElement('img');
+    img.src=cv.toDataURL('image/png');
+    img.style.cssText='width:'+cv.offsetWidth+'px;height:'+cv.offsetHeight+'px;display:block';
+    cv.parentNode.insertBefore(img,cv);
+    cv.style.display='none';
+    swaps.push({cv:cv,img:img});
+  });
+  function restore(){
+    swaps.forEach(function(s){s.cv.style.display='';s.img.remove();});
+    window.removeEventListener('afterprint',restore);
+  }
+  window.addEventListener('afterprint',restore);
+  window.print();
+}
 function authCheck(){
   const v=document.getElementById('auth-pwd').value;
   if(v==='Novar2026'){sessionStorage.setItem('novar_auth','ok');document.getElementById('auth-overlay').classList.add('hidden');}
