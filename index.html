@@ -103,6 +103,21 @@ tbody tr:hover td{background:var(--surface2)}
 .pnl-total td:first-child{color:var(--accent)!important}
 .pnl-section td{background:var(--surface3)!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.8px;color:var(--accent)!important;font-weight:700;padding:5px 14px!important}
 .pnl-indent{padding-left:28px!important}
+.pdf-btn{background:rgba(255,255,255,.06);border:1px solid var(--border2);color:var(--ink3);padding:6px 16px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:all .15s;white-space:nowrap;margin-left:8px;font-family:inherit}
+.pdf-btn:hover{background:rgba(255,153,0,.12);border-color:#FF9900;color:#FF9900}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  :root{--bg:#fff;--surface:#fff;--surface2:#f5f5f5;--surface3:#eee;--ink:#1A1A1A;--ink2:#333;--ink3:#555;--ink4:#777;--border:#e0e0e0;--border2:#ccc}
+  #auth-overlay,#pdf-btn,.date-bar,.hdr-tabs,#tt,.pag,.alert-bar,.preset-strip,.date-icon{display:none!important}
+  body{background:#fff!important}
+  .hdr{position:static!important;background:#fff!important;border-bottom:2px solid #FF9900!important}
+  .hdr-brand{color:#1A1A1A!important}.hdr-brand span{color:#FF9900!important}
+  .main{padding:10px!important;max-width:100%!important}
+  .section,.kpi-grid,.chart-wrap,.donut-row{page-break-inside:avoid}
+  .date-native{color:#1A1A1A!important;background:#f5f5f5!important;border-color:#ccc!important;color-scheme:light!important}
+  thead th{background:#f5f5f5!important;color:#555!important}
+  tbody tr:hover td{background:transparent!important}
+}
 </style>
 
 <div id="auth-overlay">
@@ -123,6 +138,7 @@ tbody tr:hover td{background:var(--surface2)}
     <button class="hdr-tab active" onclick="switchMarket('ES')">🇪🇸 España</button>
     <button class="hdr-tab" onclick="switchMarket('FR')">🇫🇷 France</button>
   </div>
+  <button id="pdf-btn" class="pdf-btn" onclick="window.print()">📄 Exportar PDF</button>
 </div>
 
 <div class="date-bar">
