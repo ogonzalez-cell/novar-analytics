@@ -1993,18 +1993,23 @@ function moveProd(d){pPg=Math.max(0,pPg+d);renderProdsTable();}
 function moveCamp(d){cPg=Math.max(0,cPg+d);renderCampsTable();}
 
 function exportPDF(){
-  // Snapshot all canvases as <img> so any PDF engine (incl. MS Print to PDF) sees them
+  window.removeEventListener('resize',drawBarChart);
+  drawBarChart();renderDonuts();
   const swaps=[];
   document.querySelectorAll('canvas').forEach(function(cv){
+    if(!cv.width||!cv.height)return;
     const img=document.createElement('img');
     img.src=cv.toDataURL('image/png');
-    img.style.cssText='width:'+cv.offsetWidth+'px;height:'+cv.offsetHeight+'px;display:block';
+    const w=cv.style.width||cv.offsetWidth+'px';
+    const h=cv.style.height||cv.offsetHeight+'px';
+    img.style.cssText='width:'+w+';height:'+h+';display:block';
     cv.parentNode.insertBefore(img,cv);
     cv.style.display='none';
     swaps.push({cv:cv,img:img});
   });
   function restore(){
     swaps.forEach(function(s){s.cv.style.display='';s.img.remove();});
+    window.addEventListener('resize',drawBarChart);
     window.removeEventListener('afterprint',restore);
   }
   window.addEventListener('afterprint',restore);
