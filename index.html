@@ -1858,18 +1858,18 @@ function renderProdsTable(){
 // P&L data — Econovar (ES channelId:12348094, FR channelId:44049039), sin IVA
 // Source: MerchantSpring getStoreProfitAndLoss, aggregated by period
 const PNL_DATA={
-  mtd:{label:'MTD jul 2026 (1–17 jul)',
-    es:{sales:38445.34,refunds:-814.78,promos:-451.65,reimb:10.20,otherIncome:805.08,revenue:37994.19,fees:3762.08,shipping:15752.87,adSpend:2968.10,expenses:22449.26,net:15544.93},
-    fr:{sales:1320.13,refunds:-20.83,promos:-23.71,reimb:0,otherIncome:44.87,revenue:1320.46,fees:160.50,shipping:837.60,adSpend:44.26,expenses:1098.87,net:221.59}},
-  prev:{label:'Jun 2026',
-    es:{sales:79069.55,refunds:-1844.83,promos:-1255.70,reimb:157.72,otherIncome:2032.73,revenue:78159.47,fees:7738.75,shipping:31721.96,adSpend:4118.62,expenses:43429.00,net:34730.47},
-    fr:{sales:3933.54,refunds:-75.82,promos:-147.05,reimb:0,otherIncome:260.45,revenue:3971.12,fees:487.37,shipping:2808.13,adSpend:977.13,expenses:4261.78,net:-290.66}},
+  mtd:{label:'MTD ago 2026 (1–3 ago)',
+    es:{sales:3463.04,refunds:-84.63,promos:-41.79,reimb:0,otherIncome:63.80,revenue:3400.42,fees:337.03,shipping:1782.83,adSpend:176.47,expenses:2297.94,net:1102.48},
+    fr:{sales:332.17,refunds:-27.08,promos:-7.48,reimb:0,otherIncome:14.14,revenue:311.75,fees:36.86,shipping:222.57,adSpend:151.85,expenses:411.80,net:-100.05}},
+  prev:{label:'Jul 2026',
+    es:{sales:86384.99,refunds:-2029.19,promos:-831.98,reimb:0,otherIncome:1793.76,revenue:85317.58,fees:8460.04,shipping:34654.58,adSpend:4472.47,expenses:47626.58,net:37691.00},
+    fr:{sales:4614.75,refunds:-52.91,promos:-78.48,reimb:0,otherIncome:249.71,revenue:4733.07,fees:545.64,shipping:3136.11,adSpend:544.56,expenses:4275.95,net:457.12}},
   q2:{label:'Q2 2026 (abr–jun)',
     es:{sales:168863.37,refunds:-3588.97,promos:-2484.83,reimb:219.69,otherIncome:4010.79,revenue:167020.05,fees:16603.73,shipping:68209.91,adSpend:10791.95,expenses:95284.51,net:71735.54},
     fr:{sales:16927.74,refunds:-314.50,promos:-381.90,reimb:5.40,otherIncome:892.51,revenue:17129.25,fees:1934.21,shipping:7699.25,adSpend:1713.35,expenses:11311.31,net:5817.94}},
-  ytd:{label:'YTD 2026 (ene–17 jul)',
-    es:{sales:286393.97,refunds:-6326.21,promos:-4202.40,reimb:304.30,otherIncome:6592.69,revenue:282762.35,fees:28798.35,shipping:114650.11,adSpend:22759.11,expenses:165618.11,net:117144.24},
-    fr:{sales:22036.16,refunds:-451.13,promos:-489.37,reimb:9.04,otherIncome:1172.71,revenue:22277.41,fees:2516.58,shipping:11430.37,adSpend:2653.70,expenses:16607.62,net:5669.79}},
+  ytd:{label:'YTD 2026 (ene–3 ago)',
+    es:{sales:337796.66,refunds:-7625.25,promos:-4624.52,reimb:304.30,otherIncome:7645.17,revenue:333486.16,fees:33833.34,shipping:135334.65,adSpend:24439.95,expenses:193093.37,net:140392.79},
+    fr:{sales:25662.95,refunds:-510.29,promos:-551.62,reimb:9.04,otherIncome:1391.69,revenue:26001.77,fees:2938.58,shipping:13951.45,adSpend:3305.85,expenses:20196.50,net:5805.27}},
   y2025:{label:'Full 2025',
     es:{sales:491374.52,refunds:-11187.47,promos:-8107.81,reimb:410.81,otherIncome:9217.11,revenue:481706.16,fees:89214.41,shipping:202252.31,adSpend:30968.07,expenses:321435.94,net:160270.22},
     fr:{sales:51395.23,refunds:-1482.14,promos:-762.14,reimb:53.53,otherIncome:1917.89,revenue:51122.37,fees:9324.93,shipping:30453.07,adSpend:5437.77,expenses:45035.02,net:6087.35}}
@@ -1886,7 +1886,6 @@ function setRange(k){
 
 function pnlKeyForRange(){
   if(rangeKey!=='custom')return rangeKey;
-  // Map custom range to nearest PNL_DATA period by overlap
   const{from,to}=rangeFromKey(rangeKey);
   const mid=new Date((from.getTime()+to.getTime())/2);
   const y=mid.getFullYear(),m=mid.getMonth();
@@ -1894,8 +1893,8 @@ function pnlKeyForRange(){
   if(y===2026){
     if(m<=1)return'ytd';
     if(m>=3&&m<=5)return'q2';
-    if(m===5)return'prev';
-    if(m>=6)return'mtd';
+    if(m===6)return'prev';
+    if(m>=7)return'mtd';
     return'ytd';
   }
   return'mtd';
