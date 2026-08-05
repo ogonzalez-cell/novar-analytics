@@ -1777,7 +1777,7 @@ function renderDonuts(){
   const prods=market==='ES'?ES_P:FR_P;
   const snpAsp=prods.reduce((s,p)=>s+(p[7]||0),0);
   const snpAsl=prods.reduce((s,p)=>s+(p[8]||0),0);
-  const sp={Cucarachas:0,Hormigas:0},sa={Cucarachas:0,Hormigas:0};
+  const sp=Object.fromEntries(CATS.map(ct=>[ct,0])),sa=Object.fromEntries(CATS.map(ct=>[ct,0]));
   prods.forEach(p=>{
     const ct=CAT_MAP[p[0]];if(!ct)return;
     sp[ct]+=(snpAsp>0?(p[7]||0)/snpAsp:0)*totAsp;
