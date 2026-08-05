@@ -1500,9 +1500,9 @@ const FR_CAMPS=[
   ["IA - Hormigas - Validation", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0]
 ];
 
-const CAT_MAP={'B08CC9JM62':'Cucarachas','B09BDF1KRD':'Cucarachas','B0DVH36RRW':'Cucarachas','B071GTBCWF':'Cucarachas','B089WFTMWT':'Hormigas','B0DVGZ1FCT':'Hormigas','B07DJ6D1ZN':'Hormigas'};
-const CATS=['Cucarachas','Hormigas'];
-const CAT_COLORS=['#FF9900','#4CAF81'];
+const CAT_MAP={'B08CC9JM62':'Cucarachas','B09BDF1KRD':'Cucarachas','B0DVH36RRW':'Cucarachas','B071GTBCWF':'Cucarachas','B0D7D6ZW77':'Cucarachas','B089WFTMWT':'Hormigas','B0DVGZ1FCT':'Hormigas','B07DJ6D1ZN':'Hormigas','B0H87S3SSG':'Mosquitos','B0CT618G2H':'Moscas'};
+const CATS=['Cucarachas','Hormigas','Mosquitos','Moscas'];
+const CAT_COLORS=['#FF9900','#4CAF81','#2196F3','#9C5E26'];
 const MO=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const MOS_S=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
 function dateLbl(iso){const p=iso.split('-');return parseInt(p[2])+' '+MOS_S[parseInt(p[1])-1];}
@@ -1909,33 +1909,151 @@ function renderProdsTable(){
 // P&L data — Econovar (ES channelId:12348094, FR channelId:44049039), sin IVA
 // Source: MerchantSpring getStoreProfitAndLoss, aggregated by period
 const PNL_DATA={
-  "es": {
-    "sales": 6186.02,
-    "refunds": -133.02,
-    "promos": -61.13,
-    "reimb": 0.0,
-    "otherIncome": 129.5,
-    "revenue": 6121.37,
-    "fees": -604.17,
-    "shipping": -2809.05,
-    "adSpend": -176.47,
-    "expenses": 0.0,
-    "net": 2531.68
+  "mtd": {
+    "label": "MTD agosto 2026 (1–4 ago)",
+    "es": {
+      "sales": 6186.02,
+      "refunds": -133.02,
+      "promos": -61.13,
+      "reimb": 0,
+      "otherIncome": 129.5,
+      "revenue": 6121.37,
+      "fees": -604.17,
+      "shipping": -2809.05,
+      "adSpend": -176.47,
+      "expenses": 0,
+      "net": 2531.68
+    },
+    "fr": {
+      "sales": 467.99,
+      "refunds": -27.08,
+      "promos": -9.14,
+      "reimb": 0,
+      "otherIncome": 22.46,
+      "revenue": 454.23,
+      "fees": -53.26,
+      "shipping": -320.58,
+      "adSpend": -151.85,
+      "expenses": 0,
+      "net": -71.46
+    }
   },
-  "fr": {
-    "sales": 467.99,
-    "refunds": -27.08,
-    "promos": -9.14,
-    "reimb": 0.0,
-    "otherIncome": 22.46,
-    "revenue": 454.23,
-    "fees": -53.26,
-    "shipping": -320.58,
-    "adSpend": -151.85,
-    "expenses": 0.0,
-    "net": -71.46
+  "prev": {
+    "label": "Julio 2026",
+    "es": {
+      "sales": 86018.17,
+      "refunds": -2029.19,
+      "promos": -828.33,
+      "reimb": 0,
+      "otherIncome": 1784.3,
+      "revenue": 84944.95,
+      "fees": -8423.47,
+      "shipping": -34123.14,
+      "adSpend": -4472.47,
+      "expenses": 0,
+      "net": 37925.87
+    },
+    "fr": {
+      "sales": 4543.51,
+      "refunds": -52.91,
+      "promos": -76.82,
+      "reimb": 0,
+      "otherIncome": 244.72,
+      "revenue": 4658.5,
+      "fees": -537.2,
+      "shipping": -3079.63,
+      "adSpend": -544.56,
+      "expenses": -48.62,
+      "net": 448.49
+    }
   },
-  "label": "MTD ago 2026 (1–4 ago)"
+  "q2": {
+    "label": "Q2 2026 (abr–jun)",
+    "es": {
+      "sales": 169116.01,
+      "refunds": -3594.96,
+      "promos": -2057.23,
+      "reimb": 119.37,
+      "otherIncome": 4013.77,
+      "revenue": 167596.96,
+      "fees": -16542.18,
+      "shipping": -67786.84,
+      "adSpend": -10791.95,
+      "expenses": -280.71,
+      "net": 72195.28
+    },
+    "fr": {
+      "sales": 16946.48,
+      "refunds": -314.5,
+      "promos": -319.17,
+      "reimb": 5.4,
+      "otherIncome": 899.62,
+      "revenue": 17217.83,
+      "fees": -1872.35,
+      "shipping": -7650.44,
+      "adSpend": -1713.35,
+      "expenses": -25.46,
+      "net": 5956.23
+    }
+  },
+  "ytd": {
+    "label": "YTD 2026 (ene–ago)",
+    "es": {
+      "sales": 340117.96,
+      "refunds": -7673.74,
+      "promos": -3986.85,
+      "reimb": 193.78,
+      "otherIncome": 7704.3,
+      "revenue": 336355.45,
+      "fees": -34032.16,
+      "shipping": -135303.38,
+      "adSpend": -24439.95,
+      "expenses": -517.29,
+      "net": 142062.67
+    },
+    "fr": {
+      "sales": 25715.03,
+      "refunds": -510.29,
+      "promos": -474.45,
+      "reimb": 9.04,
+      "otherIncome": 1395.02,
+      "revenue": 26134.35,
+      "fees": -2880.41,
+      "shipping": -13882.76,
+      "adSpend": -3305.85,
+      "expenses": -9.12,
+      "net": 6056.21
+    }
+  },
+  "y2025": {
+    "label": "Todo 2025",
+    "es": {
+      "sales": 491061.02,
+      "refunds": -11188.47,
+      "promos": -6768.89,
+      "reimb": 410.81,
+      "otherIncome": 9215.05,
+      "revenue": 482729.52,
+      "fees": -89335.04,
+      "shipping": -200912.24,
+      "adSpend": -30968.07,
+      "expenses": -996.86,
+      "net": 160517.31
+    },
+    "fr": {
+      "sales": 51378.57,
+      "refunds": -1482.14,
+      "promos": -647.2,
+      "reimb": 53.53,
+      "otherIncome": 1917.89,
+      "revenue": 51220.65,
+      "fees": -9278.2,
+      "shipping": -30187.57,
+      "adSpend": -5437.77,
+      "expenses": -195.45,
+      "net": 6121.66
+    }
+  }
 };
 
 function setRange(k){
