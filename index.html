@@ -1648,18 +1648,27 @@ function hideTT(){document.getElementById('tt').style.display='none';}
 
 function renderAlerts(){
   const alerts=[];
+  const camps=market==='ES'?ES_CAMPS:FR_CAMPS;
+  const mkt=market==='ES'?'ES':'FR';
   if(market==='ES'){
-    // Check BB% drop
     const recentBB=ES_D_RECENT.filter(r=>r[3]!=null).slice(-7).map(r=>r[3]);
     const avgBB=recentBB.length?recentBB.reduce((a,b)=>a+b,0)/recentBB.length:null;
-    if(avgBB!=null&&avgBB<60)alerts.push(`⚠️ Buy Box ES: promedio últimos 7 días con datos = ${avgBB.toFixed(1)}% (debería ser >80%). Causa probable: stock bajo en B09BDF1KRD o competidor agresivo. Acción: revisar precios y stock urgente.`);
+    if(avgBB!=null&&avgBB<60)alerts.push(`⚠️ Buy Box ${mkt}: promedio últimos 7 días = ${avgBB.toFixed(1)}% (objetivo >80%). Revisar precios y stock urgente.`);
   }
-  if(market==='FR'){
-    alerts.push('⚠️ FR Campañas: "FR - SP - Cucarachas - Generic KW" ACoS 91,5% y "IA - Cucarachas - Category" ACoS 138,6% — quemar presupuesto sin retorno. Pausar o bajar pujas urgente.');
+  const highAcos=camps.filter(c=>c[2]==='enabled'&&c[3]>5&&c[7]>40).sort((a,b)=>b[7]-a[7]);
+  if(highAcos.length){
+    const top=highAcos.slice(0,3);
+    const txt=top.map(c=>`"${c[0]}" ACoS ${c[7].toFixed(0)}%`).join(' · ');
+    alerts.push(`⚠️ ${mkt} campañas con ACoS alto: ${txt}. Revisar pujas o pausar.`);
   }
-  document.getElementById('alert-zone').innerHTML=alerts.map(a=>`<div class="alert-bar">${a}</div>`).join('');
+  const prods=market==='ES'?ES_P:FR_P;
+  const lowStock=prods.filter(p=>p[2]>0&&p[4]>0&&p[5]<10&&p[5]>0).sort((a,b)=>a[5]-b[5]);
+  if(lowStock.length){
+    const txt=lowStock.slice(0,3).map(p=>`${p[0]} (${p[5].toFixed(0)}d)`).join(' · ');
+    alerts.push(`⚠️ Stock bajo ${mkt}: ${txt}. Riesgo de rotura.`);
+  }
+  document.getElementById('alert-zone').innerHTML=alerts.length?alerts.map(a=>`<div class="alert-bar">${a}</div>`).join(''):'';
 }
-
 function renderKpis(){
   const{rows,type}=getData();
   const c=type==='daily'?sumD(rows):sumW(rows);
