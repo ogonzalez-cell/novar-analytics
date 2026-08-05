@@ -1802,7 +1802,7 @@ function renderCatTable(){
   const snpAsl=prods.reduce((s,p)=>s+(p[8]||0),0);
   const snpUnits=prods.reduce((s,p)=>s+(p[3]||0),0);
   const snpPrior=prods.reduce((s,p)=>s+(p[10]||0),0);
-  const cats={Cucarachas:{sales:0,units:0,adSpend:0,adSales:0,priorSales:0},Hormigas:{sales:0,units:0,adSpend:0,adSales:0,priorSales:0}};
+  const cats=Object.fromEntries(CATS.map(ct=>[ct,{sales:0,units:0,adSpend:0,adSales:0,priorSales:0}]));
   prods.forEach(p=>{
     const ct=CAT_MAP[p[0]];if(!ct||!cats[ct])return;
     cats[ct].sales+=(snpSales>0?(p[2]||0)/snpSales:0)*totSales;
