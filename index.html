@@ -1376,10 +1376,57 @@ const FR_W25=[["2025-01-01",118.80,15,176,88.3,0.00,0.00,0.0,16.34,2,96.3,0,0],[
 // Weekly format: [date,sales,units,sessions,bb%,adSpend,adSales,tacos,priorSales,priorUnits,priorBB%]
 // (kept for long-range fallback; not used in MTD view)
 
-const ES_P=[["B08CC9JM62", "Jeringuilla Anti-Cucarachas 10gr", 44321.21, 7218, 5633, 23.39, "Winning", 1432.21, 6093.84, 4.25, 38644.1, "4300"], ["B0DVH36RRW", "Pack Trampa + Jeringuilla Cucarachas", 13596.81, 1129, 128, 3.41, "Winning", 685.4, 2158.14, 3.15, 3558.06, "4237"], ["B089WFTMWT", "Gel Hormigas Jeringa Ecopack", 11421.21, 1834, 2712, 44.43, "Winning", 374.24, 1580.97, 4.22, 7985.6, "4301-combinado sin etiqueta"], ["B09BDF1KRD", "Jeringuilla Cucarachas 10gr (4221)", 7723.78, 1276, 15, 0.35, "Winning", 83.12, 466.74, 5.62, 11763.8, "4221-1"], ["B0DVGZ1FCT", "Hormigas Jeringa Pack", 3565.85, 297, 868, 87.97, "Winning", 152.34, 862.56, 5.66, 982.36, "4236"], ["B071GTBCWF", "Trampa Cucarachas Ecogel", 1843.86, 297, 7, 0.71, "Losing", 85.26, 179.8, 2.11, 2938.8, "4026"], ["B09BDF1KRD", "Jeringuilla Cucarachas 10gr (4221)", 1643.77, 257, 2773, 316.31, "Winning", 0.0, 0.0, 0, 0.0, "4221-EAN-valido"], ["B07DJ6D1ZN", "Trampa Hormigas 3uds", 1294.31, 208, 907, 133.38, "Winning", 126.8, 275.29, 2.17, 520.8, "CR-WGLA-DPN4-combinado sin etiqueta"], ["B07DJ6D1ZN", "Trampa Hormigas 3uds", 91.75, 15, 1, 2.0, "Winning", 28.5, 48.92, 1.72, 341.0, "CR-WGLA-DPN4"]];
-const FR_P=[["B08CC9JM62", "Seringue Anti-Cafards 10gr", 4416.88, 520, 5633, 324.36, "Winning", 430.34, 1087.48, 2.53, 4988.83, "4300"], ["B089WFTMWT", "Gel Fourmis Seringue", 531.25, 83, 2712, 980.24, "Winning", 13.95, 75.0, 5.38, 3031.25, "4301-combinado sin etiqueta"], ["B071GTBCWF", "Piège Cafard 6 unités", 421.75, 48, 7, 4.47, "Losing", 140.54, 271.25, 1.93, 787.5, "4026"], ["B07DJ6D1ZN", "Piège Fourmis 3 unités", 252.86, 41, 907, 663.66, "Winning", 0.0, 0.0, 0, 231.25, "CR-WGLA-DPN4-combinado sin etiqueta"]];
-const ES_CAMPS=[["SP - CUCARACHAS - GEN\u00c9RICO","SP","enabled",1222.26,4123.6,41776,1513,29.64,3.37],["ES - SP - CUCARACHAS - Brand KW","SP","enabled",340.28,2482.08,44267,730,13.71,7.29],["SB - Cucarachas - Gen\u00e9rica","SB","enabled",337.9,2521.65,144148,889,13.4,7.46],["SB - Todo - Brand keywords","SB","enabled",316.66,1601.3,118734,654,19.78,5.06],["ES - SP - ECONOVAR - Brand KW - Ecogel","SP","enabled",308.17,2828.73,39185,674,10.89,9.18],["ES - SP - Hormigas - Gen\u00e9rica","SP","enabled",211.53,934.76,40150,423,22.63,4.42],["ES - SP - CUCARACHAS - JERINGUILLA - GEN\u00c9RICO","SP","enabled",150.88,931.82,8770,299,16.19,6.18],["ES - SP - Hormigas - Auto","SP","enabled",145.83,529.28,27219,265,27.55,3.63],["ES - SP - Hormigas - Categoria","SP","enabled",104.35,411.31,11330,201,25.37,3.94],["ES - SP - ECONOVAR - Brand ASINs","SP","enabled",103.16,332.3,8237,170,31.04,3.22],["SP- jeringuilla - Competitor asins","SP","enabled",94.05,399.58,3587,158,23.54,4.25],["ES - SP - Hormigas - Gen\u00e9rica - Jeringuilla","SP","enabled",84.21,511.66,9354,155,16.46,6.08],["SD - Cucarachas - Remarketing de vistas","SD","enabled",82.9,512.94,68911,314,16.16,6.19],["CUCARACHAS - TRAMPA - Auto","SP","enabled",77.85,275.87,154714,199,28.22,3.54],["ES - SP - ECONOVAR - Brand KW","SP","enabled",42.55,375.24,12086,93,11.34,8.82],["SD - Todo - Brand asins","SD","paused",0.0,0.0,0,0,0.0,0.0],["NOVAR | SP | ASIN | Manual","SP","enabled",0.0,0.0,0,0,0.0,0.0],["NOVAR | SP | KW | Manual","SP","enabled",0.0,0.0,0,0,0.0,0.0]];
-const FR_CAMPS=[["FR - SP - Cucarachas - Generic KW","SP","enabled",217.65,456.12,50538,322,47.72,2.1],["FR - SP - Cucarachas - Competitor asins","SP","enabled",196.51,536.07,41954,372,36.66,2.73],["IA - Cucarachas - Category","SP","enabled",110.79,159.53,12799,136,69.45,1.44],["FR - SP - Econovar - Brand KW","SP","enabled",59.88,315.75,8448,108,18.96,5.27],["FR - IA - Hormigas - Performance","SP","enabled",0.0,0.0,0,0,0.0,0.0],["Ecogel Cucarachas (FR)","SP","enabled",0.0,0.0,0,0,0.0,0.0],["FR - SP - Hormigas - Generic KW","SP","enabled",0.0,0.0,0,0,0.0,0.0],["Ecogel Hormigas (FR)","SP","enabled",0.0,0.0,0,0,0.0,0.0],["IA - Hormigas - Validation","SP","enabled",0.0,0.0,0,0,0.0,0.0]];
+const ES_P=[
+  ["B08CC9JM62", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack", 44615.95, 7246, 4528, 18.86, "Winning", 1304.3, 5674.76, 4.35, 38610.52, "4300"],
+  ["B0DVH36RRW", "ECOGEL | Pack Trampa y Jeringuilla para Cucarachas | Alta Eficacia con Insecticida Atrayente de Máxima Potencia | Gran Poder aniquilador (Packing may vary)", 13612.52, 1128, 71, 1.89, "Winning", 651.94, 1960.25, 3.01, 3689.84, "4237"],
+  ["B089WFTMWT", "ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (4301)", 10880.59, 1747, 2598, 44.51, "Winning", 308.4, 1301.99, 4.22, 7905.0, "4301-combinado sin etiqueta"],
+  ["B09BDF1KRD", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)", 6753.26, 1115, 15, 0.4, "Winning", 68.45, 400.08, 5.84, 12540.02, "4221-1"],
+  ["B0DVGZ1FCT", "ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (PACK)", 3459.25, 286, 854, 90.53, "Winning", 139.13, 778.7, 5.6, 838.6, "4236"],
+  ["B09BDF1KRD", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)", 2459.42, 389, 2616, 207.62, "Winning", 0.0, 0.0, 0, 0.0, "4221-EAN-valido"],
+  ["B071GTBCWF", "ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)", 1652.98, 266, 4, 0.45, "No Winner", 72.98, 124.0, 1.7, 2907.8, "4026"],
+  ["B07DJ6D1ZN", "ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas", 1199.66, 194, 889, 137.47, "Winning", 99.9, 232.45, 2.33, 545.6, "CR-WGLA-DPN4-combinado sin etiqueta"],
+  ["B0H87S3SSG", "NOVAR Sayonara Mosquitos Spray 750ml | Acción Física Sin Biocidas | Elimina Adultos, Huevos y Larvas | Biodegradable, Sin Olor, No Mancha | Apto en Plantas", 478.5, 30, 147, 147.0, "Winning", 0.0, 0.0, 0, 0.0, "4077"],
+  ["B0D7D6ZW77", "ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)", 136.38, 22, 582, 831.43, "Winning", 0.0, 0.0, 0, 0.0, "4302"],
+  ["B07DJ6D1ZN", "ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas", 91.75, 15, 1, 2.0, "Winning", 28.5, 48.92, 1.72, 378.2, "CR-WGLA-DPN4"],
+  ["B0CT618G2H", "NOVAR Sayonara Trampa para Moscas Reutilizable con 3 Cebos Hidrosolubles | 4 Semanas de Eficacia | Sin Insecticida | Colgada o de Pie | 100% Reciclable", 51.8, 4, 144, 1080.0, "No Winner", 0.28, 0.0, 0.0, 0.0, "4203"]
+];
+const FR_P=[
+  ["B08CC9JM62", "ECOGEL Seringue Anti-Cafards | Efficacité Professionnelle | Élimine 50 Cafards avec Une Seule Goutte | Appât Gel Insecticide Puissant et Rapide | Ecopack 10g", 4955.15, 580, 4528, 240.85, "Winning", 433.0, 1145.79, 2.65, 4672.29, "4300"],
+  ["B089WFTMWT", "ECOGEL NOVAR 4301 Gel Insecticide Appât contre les fourmis appliqué avec une seringue 10 Grammes Format Ecopack", 552.5, 87, 2598, 895.86, "Winning", 13.86, 75.0, 5.41, 2550.0, "4301-combinado sin etiqueta"],
+  ["B071GTBCWF", "Ecogel 6 Piège Cafard extrêmement appétent et Mortel pour Tous Types de cafards Contient du Bitrex Une Substance amère Qui Le Rend non appétent aux Personnes et Animaux de Compagnie", 402.5, 46, 4, 2.61, "Losing to Others", 127.03, 262.5, 2.07, 840.0, "4026"],
+  ["B07DJ6D1ZN", "Ecogel Piège Fourmis", 240.52, 39, 889, 683.85, "Winning", 0.0, 0.0, 0, 206.25, "CR-WGLA-DPN4-combinado sin etiqueta"]
+];
+const ES_CAMPS=[
+  ["SP - CUCARACHAS - GENÉRICO", "SP", "enabled", 1160.17, 3725.93, 37781, 1386, 0.31, 3.21],
+  ["ES - SP - CUCARACHAS - Brand KW", "SP", "enabled", 301.72, 2360.92, 35468, 665, 0.13, 7.82],
+  ["SB - Cucarachas - Genérica", "SB", "enabled", 298.54, 2189.59, 122542, 780, 0.14, 7.33],
+  ["SB - Todo - Brand keywords", "SB", "enabled", 296.24, 1480.6, 98295, 605, 0.2, 5.0],
+  ["ES - SP - ECONOVAR - Brand KW - Ecogel", "SP", "enabled", 289.42, 2708.44, 41299, 646, 0.11, 9.36],
+  ["ES - SP - Hormigas - Genérica", "SP", "enabled", 174.19, 762.63, 29484, 342, 0.23, 4.38],
+  ["ES - SP - CUCARACHAS - JERINGUILLA - GENÉRICO", "SP", "enabled", 140.72, 847.38, 9118, 288, 0.17, 6.02],
+  ["ES - SP - Hormigas - Auto", "SP", "enabled", 109.02, 393.38, 23643, 211, 0.28, 3.61],
+  ["ES - SP - Hormigas - Categoria", "SP", "enabled", 87.78, 349.39, 10274, 177, 0.25, 3.98],
+  ["SP- jeringuilla - Competitor asins", "SP", "enabled", 82.15, 399.68, 3659, 147, 0.21, 4.87],
+  ["ES - SP - Hormigas - Genérica - Jeringuilla", "SP", "enabled", 79.29, 499.26, 8123, 146, 0.16, 6.3],
+  ["ES - SP - ECONOVAR - Brand ASINs", "SP", "enabled", 74.86, 247.51, 6600, 129, 0.3, 3.31],
+  ["SD - Cucarachas - Remarketing de vistas", "SD", "enabled", 71.51, 433.99, 67594, 301, 0.16, 6.07],
+  ["CUCARACHAS - TRAMPA - Auto", "SP", "enabled", 67.86, 214.0, 127942, 172, 0.32, 3.15],
+  ["ES - SP - ECONOVAR - Brand KW", "SP", "enabled", 35.19, 332.4, 10524, 75, 0.11, 9.45],
+  ["SD - Todo - Brand asins", "SD", "paused", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["NOVAR | SP | ASIN | Manual", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["NOVAR | SP | KW | Manual", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0]
+];
+const FR_CAMPS=[
+  ["FR - SP - Cucarachas - Generic KW", "SP", "enabled", 204.55, 456.12, 52846, 321, 0.45, 2.23],
+  ["FR - SP - Cucarachas - Competitor asins", "SP", "enabled", 186.13, 543.98, 44603, 374, 0.34, 2.92],
+  ["IA - Cucarachas - Category", "SP", "enabled", 124.2, 192.85, 14890, 152, 0.64, 1.55],
+  ["FR - SP - Econovar - Brand KW", "SP", "enabled", 59.01, 324.08, 7812, 104, 0.18, 5.49],
+  ["FR - IA - Hormigas - Performance", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["Ecogel Cucarachas (FR)", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["FR - SP - Hormigas - Generic KW", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["Ecogel Hormigas (FR)", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["IA - Hormigas - Validation", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0]
+];
 
 const CAT_MAP={'B08CC9JM62':'Cucarachas','B09BDF1KRD':'Cucarachas','B0DVH36RRW':'Cucarachas','B071GTBCWF':'Cucarachas','B089WFTMWT':'Hormigas','B0DVGZ1FCT':'Hormigas','B07DJ6D1ZN':'Hormigas'};
 const CATS=['Cucarachas','Hormigas'];
@@ -1790,21 +1837,33 @@ function renderProdsTable(){
 // P&L data — Econovar (ES channelId:12348094, FR channelId:44049039), sin IVA
 // Source: MerchantSpring getStoreProfitAndLoss, aggregated by period
 const PNL_DATA={
-  mtd:{label:'MTD ago 2026 (1–2 ago)',
-    es:{sales:4055.18,refunds:-90.7,promos:-46.54,reimb:0,otherIncome:74.36,revenue:3992.3,fees:395.49,shipping:1992.04,adSpend:176.47,expenses:2565.73,net:1426.57},
-    fr:{sales:415.91,refunds:-27.08,promos:-9.14,reimb:0,otherIncome:19.13,revenue:398.82,fees:46.86,shipping:279.48,adSpend:151.85,expenses:478.71,net:-79.89}},
-  prev:{label:'Jul 2026',
-    es:{sales:86012.1,refunds:-2029.19,promos:-828.33,reimb:0,otherIncome:1784.3,revenue:84938.88,fees:8422.86,shipping:34530.32,adSpend:4472.47,expenses:47465.14,net:37473.74},
-    fr:{sales:4543.51,refunds:-52.91,promos:-76.82,reimb:0,otherIncome:244.72,revenue:4658.5,fees:537.2,shipping:3089.87,adSpend:544.56,expenses:4221.27,net:437.23}},
-  q2:{label:'Q2 2026 (abr–jun)',
-    es:{sales:168989.72,refunds:-3588.97,promos:-2057.71,reimb:119.37,otherIncome:4012.86,revenue:167475.27,fees:16530.31,shipping:68741.23,adSpend:10791.95,expenses:95852.07,net:71623.2},
-    fr:{sales:16921.49,refunds:-314.5,promos:-318.7,reimb:5.4,otherIncome:892.51,revenue:17186.2,fees:1869.48,shipping:7667.84,adSpend:1713.35,expenses:11231.26,net:5954.94}},
-  ytd:{label:'YTD 2026 (ene–2 ago)',
-    es:{sales:337961.6,refunds:-7631.32,promos:-3973.36,reimb:193.78,otherIncome:7646.27,revenue:334196.97,fees:33810.72,shipping:136332.81,adSpend:24439.95,expenses:194219.75,net:139977.22},
-    fr:{sales:25662.95,refunds:-510.29,promos:-474.45,reimb:9.04,otherIncome:1391.69,revenue:26078.94,fees:2874.01,shipping:13890.82,adSpend:3305.85,expenses:20090.75,net:5988.19}},
-  y2025:{label:'Full 2025',
-    es:{sales:491374.52,refunds:-11187.47,promos:-8107.81,reimb:410.81,otherIncome:9217.11,revenue:481706.16,fees:89214.41,shipping:202252.31,adSpend:30968.07,expenses:321435.94,net:160270.22},
-    fr:{sales:51395.23,refunds:-1482.14,promos:-762.14,reimb:53.53,otherIncome:1917.89,revenue:51122.37,fees:9324.93,shipping:30453.07,adSpend:5437.77,expenses:45035.02,net:6087.35}}
+  "es": {
+    "sales": 6186.02,
+    "refunds": -133.02,
+    "promos": -61.13,
+    "reimb": 0.0,
+    "otherIncome": 129.5,
+    "revenue": 6121.37,
+    "fees": -604.17,
+    "shipping": -2809.05,
+    "adSpend": -176.47,
+    "expenses": 0.0,
+    "net": 2531.68
+  },
+  "fr": {
+    "sales": 467.99,
+    "refunds": -27.08,
+    "promos": -9.14,
+    "reimb": 0.0,
+    "otherIncome": 22.46,
+    "revenue": 454.23,
+    "fees": -53.26,
+    "shipping": -320.58,
+    "adSpend": -151.85,
+    "expenses": 0.0,
+    "net": -71.46
+  },
+  "label": "MTD ago 2026 (1–4 ago)"
 };
 
 function setRange(k){
