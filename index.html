@@ -2805,48 +2805,56 @@ const FR_W25=[["2025-01-01",118.80,15,176,88.3,0.00,0.00,0.0,16.34,2,96.3,0,0],[
 // (kept for long-range fallback; not used in MTD view)
 
 const ES_P=[
-  {asin:"B08CC9JM62",sku:"4300",sales:59247.41,units:8130,bb:93.9,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B0DVH36RRW",sku:"4237",sales:11406.46,units:787,bb:95.2,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B09BDF1KRD",sku:"4221-EAN-valido",sales:11093.97,units:1494,bb:69.0,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B089WFTMWT",sku:"4301-combinado",sales:10084.9,units:1345,bb:83.3,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B0DVGZ1FCT",sku:"4236",sales:4611.0,units:318,bb:94.5,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B0D7D6ZW77",sku:"4302",sales:778.7,units:104,bb:95.9,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B07DJ6D1ZN",sku:"CR-WGLA-DPN4",sales:555.07,units:75,bb:69.4,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B0CT618G2H",sku:"4203",sales:99.1,units:8,bb:94.6,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B09BDF1KRD",sku:"4221-1",sales:36.65,units:5,bb:66.3,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B071GTBCWF",sku:"4026",sales:22.5,units:3,bb:0,stock:null,daysCover:null,priorSales:null,priorUnits:null}
+  ["B08CC9JM62","4300",10892.64,1498,92.9,null,null,null,null,null,null,""],
+  ["B0DVH36RRW","4237",2088.0,144,92.9,null,null,null,null,null,null,""],
+  ["B09BDF1KRD","4221-1",1803.9,243,70.5,null,null,null,null,null,null,""],
+  ["B089WFTMWT","4301-combinado sin etiqueta",1762.5,235,84.8,null,null,null,null,null,null,""],
+  ["B0DVGZ1FCT","4236",928.0,64,94.4,null,null,null,null,null,null,""],
+  ["B0D7D6ZW77","4302",135.0,18,92.3,null,null,null,null,null,null,""],
+  ["B07DJ6D1ZN","CR-WGLA-DPN4",59.2,8,67.4,null,null,null,null,null,null,""],
+  ["B00L64BA7Q","4050",0.0,0,null,null,null,null,null,null,null,""],
+  ["B01ETBIC3W","4043",0.0,0,null,null,null,null,null,null,null,""],
+  ["B01ETBIG4C","4042",0.0,0,null,null,null,null,null,null,null,""],
+  ["B071GTBCWF","4026",0.0,0,null,null,null,null,null,null,null,""],
+  ["B07DCVKCMX","6N-LDZY-43IT",0.0,0,null,null,null,null,null,null,null,""],
+  ["B07RZKSJS9","4064",0.0,0,null,null,null,null,null,null,null,""],
+  ["B07S4K6S4S","BJ-V7Y2-6D9Y",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0C81899G4","4062",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0C81B4YM3","4060",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CT5X6X5P","4047",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CT618G2H","4203",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CW98T2LK","VARIANTE_JERINGUILLA_ECOGEL",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CWLVW6SL","4026-EAN",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CWRV89Y5","PARENT_MOSQUITOS",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CWRVXDP9","PARENT_RATAS",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CWRYMFL3","4443",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0FCYTHRXK","PARE_XERINGA_FORMIGUES",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0FH6TWQ4T","4064_REPELENTE",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0FHJNMX4J","4068",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0H87S3SSG","4077",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0H8D4ZZZC","PARENT-TRAMPA-CUCAS",0.0,0,null,null,null,null,null,null,null,""],
+  ["B01ETBIKHU","3Q-WNZM-XV3P",0.0,0,null,null,null,null,null,null,null,""]
 ];
 
 const FR_P=[
-  {asin:"B08CC9JM62",sku:"4300",sales:5861.91,units:561,bb:98.5,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B089WFTMWT",sku:"4301-combinado",sales:342.67,units:43,bb:99.4,stock:null,daysCover:null,priorSales:null,priorUnits:null},
-  {asin:"B07DJ6D1ZN",sku:"CR-WGLA-DPN4",sales:104.0,units:13,bb:100.0,stock:null,daysCover:null,priorSales:null,priorUnits:null}
+  ["B08CC9JM62","4300",868.08,83,97.1,null,null,null,null,null,null,""],
+  ["B089WFTMWT","4301",32.0,4,null,null,null,null,null,null,null,""],
+  ["B07DJ6D1ZN","CR-WGLA-DPN4",16.0,2,100.0,null,null,null,null,null,null,""],
+  ["B01ETBIC3W","4043",0.0,0,null,null,null,null,null,null,null,""],
+  ["B071GTBCWF","0W-LME1-NLT9",0.0,0,null,null,null,null,null,null,null,""],
+  ["B09BDF1KRD","4221-EAN-valido",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CT5X6X5P","4047",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0CT618G2H","4203",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0DVH36RRW","4237",0.0,0,null,null,null,null,null,null,null,""],
+  ["B0H87S3SSG","4077",0.0,0,null,null,null,null,null,null,null,""]
 ];
 
 const ES_CAMPS=[
-  {name:"SP Principal B08CC9JM62",adProduct:"SP",cost:1525.17,sales:5433.0,acos:28.1,impressions:90507,clicks:2014},
-  {name:"SP B09BDF1KRD Auto",adProduct:"SP",cost:504.57,sales:2809.28,acos:18.0,impressions:133264,clicks:887},
-  {name:"SB Principal",adProduct:"SB",cost:478.14,sales:2828.89,acos:16.9,impressions:114515,clicks:1203},
-  {name:"SP B089WFTMWT Exact",adProduct:"SP",cost:399.53,sales:3411.57,acos:11.7,impressions:222425,clicks:847},
-  {name:"SP B0DVGZ1FCT",adProduct:"SP",cost:264.31,sales:1426.94,acos:18.5,impressions:39575,clicks:625},
-  {name:"SP B0DVH36RRW",adProduct:"SP",cost:199.08,sales:978.77,acos:20.3,impressions:19258,clicks:380},
-  {name:"SP Broad Mix",adProduct:"SP",cost:161.21,sales:1026.98,acos:15.7,impressions:28285,clicks:366},
-  {name:"SP Auto B089WFTMWT",adProduct:"SP",cost:152.33,sales:1015.33,acos:15.0,impressions:33826,clicks:286},
-  {name:"SP Broad B08CC9JM62",adProduct:"SP",cost:152.21,sales:941.87,acos:16.2,impressions:15742,clicks:300},
-  {name:"SP B08CC9JM62 Broad2",adProduct:"SP",cost:127.65,sales:630.78,acos:20.2,impressions:10083,clicks:211},
-  {name:"SP ASIN Targeting",adProduct:"SP",cost:114.56,sales:703.34,acos:16.3,impressions:4573,clicks:198},
-  {name:"SD Retargeting",adProduct:"SD",cost:87.79,sales:493.6,acos:17.8,impressions:78889,clicks:421},
-  {name:"SB Video",adProduct:"SB",cost:86.66,sales:864.87,acos:10.0,impressions:34371,clicks:219},
-  {name:"SP Exact B07DJ6D1ZN",adProduct:"SP",cost:44.57,sales:344.27,acos:12.9,impressions:8989,clicks:68},
-  {name:"SP Categoría",adProduct:"SP",cost:41.67,sales:21.4,acos:194.7,impressions:9517,clicks:67},
-  {name:"SP Competencia",adProduct:"SP",cost:37.55,sales:53.5,acos:70.2,impressions:8968,clicks:74}
+  ["","SP","ENABLED",847.51,3803.07,161815,1542]
 ];
 
 const FR_CAMPS=[
-  {name:"SP Principal FR",adProduct:"SP",cost:360.9,sales:817.08,acos:44.2,impressions:67329,clicks:466},
-  {name:"SP Auto FR",adProduct:"SP",cost:165.39,sales:700.0,acos:23.6,impressions:63662,clicks:412},
-  {name:"SP Broad FR",adProduct:"SP",cost:133.92,sales:530.41,acos:25.2,impressions:75166,clicks:264},
-  {name:"SP Exact FR",adProduct:"SP",cost:16.89,sales:350.43,acos:4.8,impressions:1521,clicks:69}
+  ["","","ENABLED",109.28,315.0,0,0]
 ];
 
 const CAT_MAP={'B08CC9JM62':'Cucarachas','B09BDF1KRD':'Cucarachas','B0DVH36RRW':'Cucarachas','B071GTBCWF':'Cucarachas','B0D7D6ZW77':'Cucarachas','B089WFTMWT':'Hormigas','B0DVGZ1FCT':'Hormigas','B07DJ6D1ZN':'Hormigas','B0H87S3SSG':'Mosquitos','B0CT618G2H':'Moscas'};
