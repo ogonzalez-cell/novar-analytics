@@ -2464,9 +2464,81 @@ const FR_D_2026H1 =[
   ["2026-08-26",199.91,24,97.9,25.64,71.99,149.06,19,18.58,25.5,91.6]
 ];
 
-const ES_D_RECENT=[["2026-08-30",3351.03,449,null,150.0,804.45,1051.96,160,112.12,500.43,46.3],["2026-08-31",4349.35,593,null,158.46,814.01,1383.64,203,102.28,615.93,42.5],["2026-09-01",3650.38,528,87.7,161.74,793.49,1074.27,163,80.96,342.22,36.9],["2026-09-02",3357.8,435,null,161.35,816.21,1244.94,185,55.59,502.75,30.1],["2026-09-03",3401.13,466,null,162.53,925.52,789.32,116,42.55,274.19,35.0],["2026-09-04",2885.71,396,null,156.47,579.62,981.91,139,50.0,315.1,32.5],["2026-09-05",3120.91,421,null,149.67,704.18,936.22,140,49.18,286.54,39.7],["2026-09-06",3453.7,456,null,160.67,595.57,755.11,115,47.06,97.54,38.9],["2026-09-07",4087.79,555,null,148.23,638.98,1055.55,160,45.56,225.41,32.6],["2026-09-08",3736.03,506,null,161.67,642.62,1231.47,184,49.8,318.48,37.6],["2026-09-09",3312.97,454,null,158.78,640.89,1155.94,172,62.18,335.57,31.3],["2026-09-10",2256.1,341,85.2,136.85,506.83,274.44,37,26.57,78.5,12.2],["2026-09-11",2204.54,334,88.3,137.81,748.11,147.82,22,28.57,60.74,10.2],["2026-09-12",1856.7,275,90.4,135.49,665.81,203.59,31,14.89,24.38,9.6],["2026-09-13",2856.99,382,null,121.61,499.5,129.65,20,13.92,49.18,9.2],["2026-09-14",3350.47,460,null,79.16,243.14,203.7,32,12.45,24.38,7.1],["2026-09-15",3531.55,477,null,147.62,662.89,246.28,37,35.18,42.14,21.6],["2026-09-16",3201.65,437,null,154.67,687.78,284.75,45,26.03,30.16,8.5],["2026-09-17",2290.08,348,87.8,134.35,599.56,337.91,53,40.54,116.09,20.1],["2026-09-18",2236.56,341,89.7,134.6,796.96,806.24,131,86.91,534.39,40.8],["2026-09-19",1907.2,283,87.5,141.74,522.38,1456.42,236,82.68,267.13,38.5],["2026-09-20",2953.06,405,null,121.93,438.19,1006.58,153,68.9,476.43,41.5],["2026-09-21",2897.65,382,null,133.62,653.58,971.05,158,54.65,368.36,39.2],["2026-09-22",3412.58,426,89.29,145.55,755.02,null,null,null,null,null],["2026-09-23",3229.15,399,null,153.71,510.3,null,null,null,null,null],["2026-09-24",2690.48,369,null,156.61,637.38,888.58,139,65.87,409.29,34.7],["2026-09-25",2869.06,414,87.8,155.61,927.32,301.78,47,33.18,55.08,10.3],["2026-09-26",2278.46,336,89.4,151.97,706.67,300.58,44,69.38,122.08,48.7],["2026-09-27",2778.76,371,null,132.06,546.69,671.0,109,70.34,234.21,48.3],["2026-09-28",3348.43,461,null,143.16,706.94,277.63,44,16.97,36.65,11.7],["2026-09-29",3179.23,441,null,150.85,615.36,1371.99,221,101.76,768.21,61.2],["2026-09-30",2956.78,411,null,61.96,316.21,1349.95,221,88.17,645.92,62.9],["2026-10-01",2796.35,396,null,150.42,549.73,1377.11,222,96.72,693.48,68.2],["2026-10-02",3001.42,424,null,150.88,876.29,1644.02,257,141.5,656.46,75.2],["2026-10-03",2447.7,334,null,149.42,555.95,1371.13,214,137.75,491.32,97.5]];
+const ES_D_RECENT=[
+  ["2026-08-31", 4349.35, 593, null, 158.46, 814.01, 1383.64, 203, 102.28, 615.93, 42.5],
+  ["2026-09-01", 3650.38, 528, 87.7, 161.74, 793.49, 1074.27, 163, 80.96, 342.22, 36.9],
+  ["2026-09-02", 3357.8, 435, null, 161.35, 816.21, 1244.94, 185, 55.59, 502.75, 30.1],
+  ["2026-09-03", 3401.13, 466, null, 162.53, 925.52, 789.32, 116, 42.55, 274.19, 35.0],
+  ["2026-09-04", 2885.71, 396, null, 156.47, 579.62, 981.91, 139, 50.0, 315.1, 32.5],
+  ["2026-09-05", 3120.91, 421, null, 149.67, 704.18, 936.22, 140, 49.18, 286.54, 39.7],
+  ["2026-09-06", 3453.7, 456, null, 160.67, 595.57, 755.11, 115, 47.06, 97.54, 38.9],
+  ["2026-09-07", 4087.79, 555, null, 148.23, 638.98, 1055.55, 160, 45.56, 225.41, 32.6],
+  ["2026-09-08", 3736.03, 506, null, 161.67, 642.62, 1231.47, 184, 49.8, 318.48, 37.6],
+  ["2026-09-09", 3312.97, 454, null, 158.78, 640.89, 1155.94, 172, 62.18, 335.57, 31.3],
+  ["2026-09-10", 2256.1, 341, 85.2, 136.85, 506.83, 274.44, 37, 26.57, 78.5, 12.2],
+  ["2026-09-11", 2204.54, 334, 88.3, 137.81, 748.11, 147.82, 22, 28.57, 60.74, 10.2],
+  ["2026-09-12", 1856.7, 275, 90.4, 135.49, 665.81, 203.59, 31, 14.89, 24.38, 9.6],
+  ["2026-09-13", 2856.99, 382, null, 121.61, 499.5, 129.65, 20, 13.92, 49.18, 9.2],
+  ["2026-09-14", 3350.47, 460, null, 79.16, 243.14, 203.7, 32, 12.45, 24.38, 7.1],
+  ["2026-09-15", 3531.55, 477, null, 147.62, 662.89, 246.28, 37, 35.18, 42.14, 21.6],
+  ["2026-09-16", 3201.65, 437, null, 154.67, 687.78, 284.75, 45, 26.03, 30.16, 8.5],
+  ["2026-09-17", 2290.08, 348, 87.8, 134.35, 599.56, 337.91, 53, 40.54, 116.09, 20.1],
+  ["2026-09-18", 2236.56, 341, 89.7, 134.6, 796.96, 806.24, 131, 86.91, 534.39, 40.8],
+  ["2026-09-19", 1907.2, 283, 87.5, 141.74, 522.38, 1456.42, 236, 82.68, 267.13, 38.5],
+  ["2026-09-20", 2953.06, 405, null, 121.93, 438.19, 1006.58, 153, 68.9, 476.43, 41.5],
+  ["2026-09-21", 2897.65, 382, null, 133.62, 653.58, 971.05, 158, 54.65, 368.36, 39.2],
+  ["2026-09-22", 3412.58, 426, 89.29, 145.55, 755.02, null, null, null, null, null],
+  ["2026-09-23", 3229.15, 399, null, 153.71, 510.3, null, null, null, null, null],
+  ["2026-09-24", 2690.48, 369, null, 156.61, 637.38, 888.58, 139, 65.87, 409.29, 34.7],
+  ["2026-09-25", 2869.06, 414, 87.8, 155.61, 927.32, 301.78, 47, 33.18, 55.08, 10.3],
+  ["2026-09-26", 2278.46, 336, 89.4, 151.97, 706.67, 300.58, 44, 69.38, 122.08, 48.7],
+  ["2026-09-27", 2778.76, 371, null, 132.06, 546.69, 671.0, 109, 70.34, 234.21, 48.3],
+  ["2026-09-28", 3348.43, 461, null, 143.16, 706.94, 277.63, 44, 16.97, 36.65, 11.7],
+  ["2026-09-29", 3179.23, 441, null, 150.85, 615.36, 1371.99, 221, 101.76, 768.21, 61.2],
+  ["2026-09-30", 2956.78, 411, null, 61.96, 316.21, 1349.95, 221, 88.17, 645.92, 62.9],
+  ["2026-10-01", 2796.35, 396, null, 150.42, 549.73, 1377.11, 222, 96.72, 693.48, 68.2],
+  ["2026-10-02", 3001.42, 424, null, 150.88, 876.29, 1644.02, 257, 141.5, 656.46, 75.2],
+  ["2026-10-03", 2447.7, 334, null, 149.42, 555.95, 1371.13, 214, 137.75, 491.32, 97.5],
+  ["2026-10-04", 2736.85, 380, null, 148.56, 718.38, 1362.02, 219, 118.51, 393.35, 97.3]
+];
 
-const FR_D_RECENT=[["2026-08-30",248.59,26,null,26.66,85.83,108.32,14,75.38,17.5,91.8],["2026-08-31",300.0,33,null,23.7,43.75,64.58,8,61.19,43.75,92.6],["2026-09-01",262.17,27,99.3,25.21,33.33,52.5,6,41.21,35.0,88.8],["2026-09-02",257.58,28,null,25.14,43.75,66.24,8,14.64,35.0,90.4],["2026-09-03",363.92,37,null,26.15,87.5,38.33,5,14.28,0.0,78.4],["2026-09-04",314.42,34,null,23.26,50.42,16.66,2,12.77,0.0,84.5],["2026-09-05",292.5,29,null,24.06,70.0,65.83,9,15.98,35.0,76.8],["2026-09-06",271.92,28,null,25.34,35.0,108.33,13,14.87,35.0,84.1],["2026-09-07",269.84,30,null,23.33,26.25,6.25,1,16.56,8.75,89.6],["2026-09-08",263.92,28,null,26.58,52.5,32.08,4,16.46,8.75,86.8],["2026-09-09",230.67,24,null,23.64,43.75,17.5,2,13.85,8.75,93.7],["2026-09-10",136.25,16,100.0,22.72,59.17,12.5,2,0.0,0.0,33.3],["2026-09-11",135.59,16,100.0,26.29,43.75,0.0,0,0.0,0.0,38.6],["2026-09-12",204.75,23,100.0,20.81,26.25,17.08,2,0.0,0.0,56.7],["2026-09-13",246.0,25,null,23.18,43.75,6.25,1,0.0,0.0,37.5],["2026-09-14",157.74,17,null,14.68,8.75,12.5,2,0.0,0.0,60.0],["2026-09-15",122.84,13,null,20.5,35.0,6.25,1,0.0,0.0,44.8],["2026-09-16",248.5,26,null,17.71,61.25,0.0,0,0.0,0.0,60.0],["2026-09-17",136.5,15,98.2,19.26,61.25,8.33,1,9.23,0.0,52.1],["2026-09-18",99.75,11,95.1,18.49,52.5,25.41,3,23.35,8.75,88.5],["2026-09-19",141.42,15,91.8,15.23,17.5,57.07,7,22.14,17.5,96.3],["2026-09-20",213.5,22,null,17.3,70.0,42.91,5,20.76,17.5,100.0],["2026-09-21",164.58,18,null,17.91,52.5,29.58,4,21.16,8.75,97.8],["2026-09-22",134.0,13,100.0,19.32,43.75,null,null,null,null,null],["2026-09-23",137.0,14,null,21.03,52.5,null,null,null,null,null],["2026-09-24",199.75,21,null,17.89,17.5,38.33,5,20.5,17.5,93.4],["2026-09-25",128.15,15,100.0,15.53,43.75,25.41,3,4.16,8.75,94.7],["2026-09-26",120.83,13,98.8,19.59,15.83,40.41,5,16.82,25.83,95.3],["2026-09-27",132.33,14,null,18.71,33.33,47.9,6,0.0,0.0,94.4],["2026-09-28",185.66,20,null,20.95,40.41,39.57,5,0.0,0.0,68.5],["2026-09-29",219.5,24,null,16.6,17.5,49.98,6,0.0,0.0,65.0],["2026-09-30",131.25,13,null,15.56,17.5,187.43,23,0.0,0.0,90.3],["2026-10-01",113.83,12,null,16.2,0.0,66.64,8,0.0,0.0,81.6],["2026-10-02",210.0,21,null,16.07,35.0,75.39,9,10.34,8.75,94.5],["2026-10-03",152.25,15,null,14.87,26.25,93.31,11,19.86,17.5,96.9]];
+const FR_D_RECENT=[
+  ["2026-08-31", 300.0, 33, null, 23.7, 43.75, 64.58, 8, 61.19, 43.75, 92.6],
+  ["2026-09-01", 262.17, 27, 99.3, 25.21, 33.33, 52.5, 6, 41.21, 35.0, 88.8],
+  ["2026-09-02", 257.58, 28, null, 25.14, 43.75, 66.24, 8, 14.64, 35.0, 90.4],
+  ["2026-09-03", 363.92, 37, null, 26.15, 87.5, 38.33, 5, 14.28, 0.0, 78.4],
+  ["2026-09-04", 314.42, 34, null, 23.26, 50.42, 16.66, 2, 12.77, 0.0, 84.5],
+  ["2026-09-05", 292.5, 29, null, 24.06, 70.0, 65.83, 9, 15.98, 35.0, 76.8],
+  ["2026-09-06", 271.92, 28, null, 25.34, 35.0, 108.33, 13, 14.87, 35.0, 84.1],
+  ["2026-09-07", 269.84, 30, null, 23.33, 26.25, 6.25, 1, 16.56, 8.75, 89.6],
+  ["2026-09-08", 263.92, 28, null, 26.58, 52.5, 32.08, 4, 16.46, 8.75, 86.8],
+  ["2026-09-09", 230.67, 24, null, 23.64, 43.75, 17.5, 2, 13.85, 8.75, 93.7],
+  ["2026-09-10", 136.25, 16, 100.0, 22.72, 59.17, 12.5, 2, 0.0, 0.0, 33.3],
+  ["2026-09-11", 135.59, 16, 100.0, 26.29, 43.75, 0.0, 0, 0.0, 0.0, 38.6],
+  ["2026-09-12", 204.75, 23, 100.0, 20.81, 26.25, 17.08, 2, 0.0, 0.0, 56.7],
+  ["2026-09-13", 246.0, 25, null, 23.18, 43.75, 6.25, 1, 0.0, 0.0, 37.5],
+  ["2026-09-14", 157.74, 17, null, 14.68, 8.75, 12.5, 2, 0.0, 0.0, 60.0],
+  ["2026-09-15", 122.84, 13, null, 20.5, 35.0, 6.25, 1, 0.0, 0.0, 44.8],
+  ["2026-09-16", 248.5, 26, null, 17.71, 61.25, 0.0, 0, 0.0, 0.0, 60.0],
+  ["2026-09-17", 136.5, 15, 98.2, 19.26, 61.25, 8.33, 1, 9.23, 0.0, 52.1],
+  ["2026-09-18", 99.75, 11, 95.1, 18.49, 52.5, 25.41, 3, 23.35, 8.75, 88.5],
+  ["2026-09-19", 141.42, 15, 91.8, 15.23, 17.5, 57.07, 7, 22.14, 17.5, 96.3],
+  ["2026-09-20", 213.5, 22, null, 17.3, 70.0, 42.91, 5, 20.76, 17.5, 100.0],
+  ["2026-09-21", 164.58, 18, null, 17.91, 52.5, 29.58, 4, 21.16, 8.75, 97.8],
+  ["2026-09-22", 134.0, 13, 100.0, 19.32, 43.75, null, null, null, null, null],
+  ["2026-09-23", 137.0, 14, null, 21.03, 52.5, null, null, null, null, null],
+  ["2026-09-24", 199.75, 21, null, 17.89, 17.5, 38.33, 5, 20.5, 17.5, 93.4],
+  ["2026-09-25", 128.15, 15, 100.0, 15.53, 43.75, 25.41, 3, 4.16, 8.75, 94.7],
+  ["2026-09-26", 120.83, 13, 98.8, 19.59, 15.83, 40.41, 5, 16.82, 25.83, 95.3],
+  ["2026-09-27", 132.33, 14, null, 18.71, 33.33, 47.9, 6, 0.0, 0.0, 94.4],
+  ["2026-09-28", 185.66, 20, null, 20.95, 40.41, 39.57, 5, 0.0, 0.0, 68.5],
+  ["2026-09-29", 219.5, 24, null, 16.6, 17.5, 49.98, 6, 0.0, 0.0, 65.0],
+  ["2026-09-30", 131.25, 13, null, 15.56, 17.5, 187.43, 23, 0.0, 0.0, 90.3],
+  ["2026-10-01", 113.83, 12, null, 16.2, 0.0, 66.64, 8, 0.0, 0.0, 81.6],
+  ["2026-10-02", 210.0, 21, null, 16.07, 35.0, 75.39, 9, 10.34, 8.75, 94.5],
+  ["2026-10-03", 152.25, 15, null, 14.87, 26.25, 93.31, 11, 19.86, 17.5, 96.9],
+  ["2026-10-04", 120.42, 13, null, 18.29, 26.25, 120.38, 15, 12.81, 35.0, 97.7]
+];
 
 // Weekly 2026 (fallback for ranges >31d)
 
@@ -2482,13 +2554,62 @@ const FR_W25=[["2025-01-01",118.80,15,176,88.3,0.00,0.00,0.0,16.34,2,96.3,0,0],[
 
 // (kept for long-range fallback; not used in MTD view)
 
-const ES_P=[["B08CC9JM62","NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack",7468,1360.0,0,2025.71,7959.98,37753.47,"winning"],["B089WFTMWT","ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (4301)",1409,517.0,0,579.07,2662.39,6135.57,"losing to others"],["B0DVH36RRW","ECOGEL | Pack Trampa y Jeringuilla para Cucarachas | Alta Eficacia con Insecticida Atrayente de Máxima Potencia | Gran Poder aniquilador (Packing may vary)",726,128.0,0,683.99,1415.4,7332.89,"winning"],["B09BDF1KRD","NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)",1347,0.0,0,0.0,0.0,0.0,"winning"],["B0DVGZ1FCT","ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (PACK)",306,37.0,0,322.92,1221.96,2449.16,"winning"],["B0D7D6ZW77","ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)",98,0.0,0,0.0,0.0,0.0,"winning"],["B07DJ6D1ZN","ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas",92,27.0,0,8.73,42.84,534.14,"losing to others"],["B0CT618G2H","NOVAR Sayonara Trampa para Moscas Reutilizable con 3 Cebos Hidrosolubles | 4 Semanas de Eficacia | Sin Insecticida | Colgada o de Pie | 100% Reciclable",10,0.0,0,98.91,85.6,23.65,"winning"],["B0H87S3SSG","NOVAR Sayonara Mosquitos Spray 750ml | Acción Física Sin Biocidas | Elimina Adultos, Huevos y Larvas | Biodegradable, Sin Olor, No Mancha | Apto en Plantas",3,0.0,0,0.0,0.0,0.0,"winning"],["B09BDF1KRD","NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)",4,1484.0,0,0.0,0.0,0.0,"winning"],["B071GTBCWF","ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)",2,145.0,0,0.0,0.0,0.0,"losing to others"],["B07DJ6D1ZN","ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas",1,43.0,0,2.72,36.72,0.0,"losing to others"]];
+const ES_P=[
+  ["B08CC9JM62", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack", 45139.94, 7386, 4324, 17.59, "Winning", 2027.36, 7965.05, 3.93, 9560.88, "4300"],
+  ["B089WFTMWT", "ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (4301)", 8906.36, 1429, 1692, 35.82, "Winning", 582.87, 2674.79, 4.59, 3124.8, "4301-combinado sin etiqueta"],
+  ["B0DVH36RRW", "ECOGEL | Pack Trampa y Jeringuilla para Cucarachas | Alta Eficacia con Insecticida Atrayente de Máxima Potencia | Gran Poder aniquilador (Packing may vary)", 8731.29, 725, 125, 5.19, "Winning", 678.61, 1439.36, 2.12, 1305.82, "4237"],
+  ["B09BDF1KRD", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)", 8446.59, 1366, 2837, 63.28, "Winning", 0.0, 0.0, 0, 0.0, "4221-EAN-valido"],
+  ["B0DVGZ1FCT", "ECOGEL Hormigas | Eficacia Profesional | Jeringa 10gr Ecopack | 1 unidad | Caja de cartón (PACK)", 3666.69, 305, 450, 44.26, "Winning", 321.77, 1221.96, 3.8, 431.28, "4236"],
+  ["B0D7D6ZW77", "ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)", 592.59, 96, 673, 210.31, "Winning", 0.0, 0.0, 0, 0.0, "4302"],
+  ["B07DJ6D1ZN", "ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas", 580.55, 93, 609, 198.59, "Losing to Others", 8.19, 42.84, 5.23, 167.4, "CR-WGLA-DPN4-combinado sin etiqueta"],
+  ["B0CT618G2H", "NOVAR Sayonara Trampa para Moscas Reutilizable con 3 Cebos Hidrosolubles | 4 Semanas de Eficacia | Sin Insecticida | Colgada o de Pie | 100% Reciclable", 109.25, 10, 122, 366.0, "Winning", 93.7, 96.3, 1.03, 0.0, "4203"],
+  ["B0H87S3SSG", "NOVAR Sayonara Mosquitos Spray 750ml | Acción Física Sin Biocidas | Elimina Adultos, Huevos y Larvas | Biodegradable, Sin Olor, No Mancha | Apto en Plantas", 39.54, 3, 224, 1461.0, "Winning", 0.0, 0.0, 0, 0.0, "4077"],
+  ["B09BDF1KRD", "NOVAR ECOGEL Jeringuilla contra cucarachas | Eficacia Profesional| Elimina 50 cucarachas con una Sola Gota, insectos | 10 gr Ecopack (ECOGEL)", 25.51, 4, 1, 7.5, "Winning", 0.0, 0.0, 0, 8566.66, "4221-1"],
+  ["B071GTBCWF", "ECOGEL Trampa Cucarachas | Trampa con Insecticida | Máxima atracción | Gran Poder aniquilador | Protección hasta 6 Meses (ECOGEL)", 13.7, 2, 2, 30.0, "Losing to Others", 0.0, 0.0, 0, 923.8, "4026"],
+  ["B07DJ6D1ZN", "ECOGEL Trampa Hormigas | Trampa con insecticida | Máxima atracción | Elimina la Colonia Entera | Efectivo en Interiores y Exteriores | 3 trampas", 7.4, 1, 1, 30.0, "Losing to Others", 2.72, 36.72, 13.5, 254.2, "CR-WGLA-DPN4"]
+];
 
-const FR_P=[["B08CC9JM62","ECOGEL Seringue Anti-Cafards | Efficacité Professionnelle | Élimine 50 Cafards avec Une Seule Goutte | Appât Gel Insecticide Puissant et Rapide | Ecopack 10g",503,86.0,0,599.6,1768.3,2695.48,"winning"],["B089WFTMWT","ECOGEL NOVAR 4301 Gel Insecticide Appât contre les fourmis appliqué avec une seringue 10 Grammes Format Ecopack",27,19.0,0,0.95,6.67,173.39,"winning"],["B07DJ6D1ZN","Ecogel Piège Fourmis",11,7.0,0,0.0,0.0,0.0,"winning"]];
+const FR_P=[
+  ["B08CC9JM62", "ECOGEL Seringue Anti-Cafards | Efficacité Professionnelle | Élimine 50 Cafards avec Une Seule Goutte | Appât Gel Insecticide Puissant et Rapide | Ecopack 10g", 4294.03, 485, 4348, 267.84, "Winning", 593.32, 1672.05, 2.82, 790.1, "4300"],
+  ["B089WFTMWT", "ECOGEL NOVAR 4301 Gel Insecticide Appât contre les fourmis appliqué avec une seringue 10 Grammes Format Ecopack", 146.72, 22, 1702, 1461.0, "Winning", 2.26, 6.67, 2.95, 131.25, "4301-combinado sin etiqueta"],
+  ["B07DJ6D1ZN", "Ecogel Piège Fourmis", 73.35, 11, 609, 1461.0, "Winning", 0.0, 0.0, 0, 43.75, "CR-WGLA-DPN4-combinado sin etiqueta"]
+];
 
-const ES_CAMPS=[["","SP","enabled",0.0,0.0,80393,1861,0.3,0.0],["","SP","enabled",0.0,0.0,104164,796,0.2,0.0],["","SB","enabled",0.0,0.0,96766,1048,0.2,0.0],["","SP","enabled",0.0,0.0,231131,794,0.1,0.0],["","SP","enabled",0.0,0.0,33480,556,0.2,0.0],["","SP","enabled",0.0,0.0,27079,428,0.2,0.0],["","SP","enabled",0.0,0.0,15375,287,0.2,0.0],["","SP","enabled",0.0,0.0,27325,234,0.2,0.0],["","SP","enabled",0.0,0.0,13558,277,0.2,0.0],["","SP","enabled",0.0,0.0,9207,210,0.2,0.0],["","SP","enabled",0.0,0.0,4753,195,0.2,0.0],["","SB","enabled",0.0,0.0,37963,211,0.1,0.0],["","SD","enabled",0.0,0.0,71623,288,0.2,0.0],["","SP","enabled",0.0,0.0,9698,78,1.8,0.0],["","SP","enabled",0.0,0.0,10199,81,0.2,0.0],["","SP","enabled",0.0,0.0,9282,88,0.7,0.0],["","SP","enabled",0.0,0.0,7,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","paused",0.0,0.0,0,0,0.0,0.0],["","SD","paused",0.0,0.0,0,0,0.0,0.0]];
+const ES_CAMPS=[
+  ["SP - CUCARACHAS - GENÉRICO", "SP", "enabled", 1460.57, 4656.67, 79233, 1858, 31.0, 3.19],
+  ["ES - SP - ECONOVAR - Brand KW - Ecogel", "SP", "enabled", 466.97, 2499.12, 99661, 785, 19.0, 5.35],
+  ["SB - Cucarachas - Genérica", "SB", "enabled", 439.8, 2630.71, 95791, 1037, 17.0, 5.98],
+  ["ES - SP - CUCARACHAS - Brand KW", "SP", "enabled", 424.84, 2774.77, 218225, 780, 15.0, 6.53],
+  ["ES - SP - Hormigas - Categoria", "SP", "enabled", 242.6, 1637.31, 33426, 553, 15.0, 6.75],
+  ["ES - SP - Hormigas - Auto", "SP", "enabled", 198.74, 1220.53, 26513, 429, 16.0, 6.14],
+  ["ES - SP - ECONOVAR - Brand ASINs", "SP", "enabled", 151.19, 785.41, 15306, 287, 19.0, 5.19],
+  ["ES - SP - CUCARACHAS - JERINGUILLA - GENÉRICO", "SP", "enabled", 146.43, 858.77, 13724, 275, 17.0, 5.86],
+  ["ES - SP - Hormigas - Genérica - Jeringuilla", "SP", "enabled", 144.45, 910.98, 26357, 226, 16.0, 6.31],
+  ["ES - SP - Hormigas - Genérica", "SP", "enabled", 137.16, 619.98, 9154, 208, 22.0, 4.52],
+  ["SP- jeringuilla - Competitor asins", "SP", "enabled", 116.91, 641.69, 4712, 194, 18.0, 5.49],
+  ["SB - Todo - Brand keywords", "SB", "enabled", 94.09, 880.94, 39312, 211, 11.0, 9.36],
+  ["SD - Cucarachas - Remarketing de vistas", "SD", "enabled", 88.65, 431.35, 69967, 284, 21.0, 4.87],
+  ["ES - SP - ECONOVAR - Brand KW", "SP", "enabled", 48.45, 331.9, 11019, 88, 15.0, 6.85],
+  ["SP - Mosquitos - Auto", "SP", "enabled", 46.56, 38.17, 7808, 74, 122.0, 0.82],
+  ["SP - Moscas - Generic KW", "SP", "enabled", 41.7, 64.2, 8213, 83, 65.0, 1.54],
+  ["CUCARACHAS - TRAMPA - Auto", "SP", "enabled", 0.0, 0.0, 7, 0, 0.0, 0],
+  ["NOVAR | SP | KW | Manual", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["NOVAR | SP | ASIN | Manual", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["SP - Mosquitos - Generic KW - Repelente", "SP", "paused", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["SD - Todo - Brand asins", "SD", "paused", 0.0, 0.0, 0, 0, 0.0, 0]
+];
 
-const FR_CAMPS=[["","SP","enabled",0.0,0.0,64640,424,0.5,0.0],["","SP","enabled",0.0,0.0,58951,308,0.2,0.0],["","SP","enabled",0.0,0.0,69346,192,0.3,0.0],["","SP","enabled",0.0,0.0,1336,57,0.1,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0],["","SP","enabled",0.0,0.0,0,0,0.0,0.0]];
+const FR_CAMPS=[
+  ["IA - Cucarachas - Category", "SP", "enabled", 362.63, 698.33, 64594, 420, 52.0, 1.93],
+  ["FR - SP - Cucarachas - Competitor asins", "SP", "enabled", 112.95, 407.91, 58014, 299, 28.0, 3.61],
+  ["FR - SP - Cucarachas - Generic KW", "SP", "enabled", 96.87, 304.98, 69388, 185, 32.0, 3.15],
+  ["FR - SP - Econovar - Brand KW", "SP", "enabled", 23.13, 267.5, 1370, 57, 9.0, 11.57],
+  ["FR - IA - Hormigas - Performance", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["Ecogel Cucarachas (FR)", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["FR - SP - Hormigas - Generic KW", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["Ecogel Hormigas (FR)", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0],
+  ["IA - Hormigas - Validation", "SP", "enabled", 0.0, 0.0, 0, 0, 0.0, 0]
+];
 
 const CAT_MAP={'B08CC9JM62':'Cucarachas','B09BDF1KRD':'Cucarachas','B0DVH36RRW':'Cucarachas','B071GTBCWF':'Cucarachas','B0D7D6ZW77':'Cucarachas','B089WFTMWT':'Hormigas','B0DVGZ1FCT':'Hormigas','B07DJ6D1ZN':'Hormigas','B0H87S3SSG':'Mosquitos','B0CT618G2H':'Moscas'};
 
@@ -3282,7 +3403,153 @@ function renderProdsTable(){
 
 // Source: MerchantSpring getStoreProfitAndLoss, aggregated by period
 
-const PNL_DATA={"ytd":{"label":"YTD 2026 (ene-oct)","es":{"otherIncome":11484.12,"reimb":894.15,"refunds":-12375.99,"promos":-6091.82,"sales":505247.78,"shipping":-198152.41,"otherExp":0.0,"adSpend":-32090.03,"fees":-49740.09,"revenue":499158.24,"net":219175.71},"fr":{"otherIncome":2033.5,"reimb":44.8,"refunds":-955.23,"promos":-730.75,"sales":37126.98,"shipping":-20852.09,"otherExp":0.0,"adSpend":-4481.95,"fees":-4145.27,"revenue":37519.3,"net":8039.99},"total":{"otherIncome":13517.62,"reimb":938.95,"refunds":-13331.22,"promos":-6822.57,"sales":542374.76,"shipping":-219004.5,"otherExp":0.0,"adSpend":-36571.98,"fees":-53885.36,"revenue":536677.54,"net":227215.7}},"mtd":{"label":"MTD octubre 2026 (1-3 oct)","es":{"sales":5912.38,"refunds":-164.49,"promos":-54.1,"reimb":38.7,"otherIncome":140.25,"fees":574.99,"shipping":2575.4,"adSpend":383.44,"otherExp":0,"revenue":5872.74,"net":2338.91},"fr":{"sales":272.08,"refunds":-8.75,"promos":-5.54,"reimb":0.0,"otherIncome":14.4,"fees":31.49,"shipping":175.18,"adSpend":138.9,"otherExp":0,"revenue":272.19,"net":-73.38},"total":{"sales":6184.46,"refunds":-173.24,"promos":-59.64,"reimb":38.7,"otherIncome":154.65,"fees":606.48,"shipping":2750.58,"adSpend":522.34,"otherExp":0,"revenue":6144.93,"net":2265.53}},"prev":{"label":"Septiembre 2026 (mes completo)","es":{"sales":80580.54,"refunds":-2124.59,"promos":-810.48,"reimb":557.58,"otherIncome":1956.29,"fees":7993.74,"shipping":32219.88,"adSpend":4504.69,"otherExp":0,"revenue":80159.34,"net":35441.03},"fr":{"sales":5450.48,"refunds":-174.57,"promos":-120.9,"reimb":35.76,"otherIncome":301.48,"fees":625.77,"shipping":3359.44,"adSpend":813.2,"otherExp":0,"revenue":5492.25,"net":693.84},"total":{"sales":86031.02,"refunds":-2299.16,"promos":-931.38,"reimb":593.34,"otherIncome":2257.77,"fees":8619.51,"shipping":35579.32,"adSpend":5317.89,"otherExp":0,"revenue":85651.59,"net":36134.87}},"q2":{"label":"Q2 2026 (abr–jun)","es":{"sales":169116.01,"refunds":-3594.96,"promos":-2057.23,"reimb":119.37,"otherIncome":4013.77,"revenue":167596.96,"fees":-16542.18,"shipping":-67786.84,"adSpend":-10791.95,"expenses":-280.71,"net":72195.28},"fr":{"sales":16946.48,"refunds":-314.5,"promos":-319.17,"reimb":5.4,"otherIncome":899.62,"revenue":17217.83,"fees":-1872.35,"shipping":-7650.44,"adSpend":-1713.35,"expenses":-25.46,"net":5956.23}},"y2025":{"label":"Todo 2025","es":{"sales":491061.02,"refunds":-11188.47,"promos":-6768.89,"reimb":410.81,"otherIncome":9215.05,"revenue":482729.52,"fees":-89335.04,"shipping":-200912.24,"adSpend":-30968.07,"expenses":-996.86,"net":160517.31},"fr":{"sales":51378.57,"refunds":-1482.14,"promos":-647.2,"reimb":53.53,"otherIncome":1917.89,"revenue":51220.65,"fees":-9278.2,"shipping":-30187.57,"adSpend":-5437.77,"expenses":-195.45,"net":6121.66}}};
+const PNL_DATA={
+  "mtd": {
+    "label": "MTD octubre 2026 (1–4 oct)",
+    "es": {
+      "sales": 7684.8,
+      "refunds": -188.77,
+      "promos": -64.97,
+      "reimb": 32.26,
+      "otherIncome": 186.73,
+      "revenue": 7650.05,
+      "fees": -789.47,
+      "shipping": -3262.21,
+      "adSpend": -383.44,
+      "expenses": 0,
+      "net": 3214.93
+    },
+    "fr": {
+      "sales": 315.83,
+      "refunds": -8.75,
+      "promos": -5.54,
+      "reimb": 0,
+      "otherIncome": 15.51,
+      "revenue": 317.05,
+      "fees": -36.65,
+      "shipping": -202.22,
+      "adSpend": -138.9,
+      "expenses": 0,
+      "net": -60.72
+    }
+  },
+  "prev": {
+    "label": "Septiembre 2026",
+    "es": {
+      "sales": 80580.54,
+      "refunds": -2124.59,
+      "promos": -810.48,
+      "reimb": 557.58,
+      "otherIncome": 1956.29,
+      "revenue": 80159.34,
+      "fees": -7993.74,
+      "shipping": -32219.88,
+      "adSpend": -4504.69,
+      "expenses": 0,
+      "net": 35441.03
+    },
+    "fr": {
+      "sales": 5450.48,
+      "refunds": -174.57,
+      "promos": -120.9,
+      "reimb": 35.76,
+      "otherIncome": 301.48,
+      "revenue": 5492.25,
+      "fees": -625.77,
+      "shipping": -3359.44,
+      "adSpend": -813.2,
+      "expenses": 0,
+      "net": 693.84
+    }
+  },
+  "q2": {
+    "label": "Q2 2026 (abr–jun)",
+    "es": {
+      "sales": 169116.01,
+      "refunds": -3594.96,
+      "promos": -2057.23,
+      "reimb": 119.37,
+      "otherIncome": 4013.77,
+      "revenue": 167596.96,
+      "fees": -16542.18,
+      "shipping": -67786.84,
+      "adSpend": -10791.95,
+      "expenses": -280.71,
+      "net": 72195.28
+    },
+    "fr": {
+      "sales": 16946.48,
+      "refunds": -314.5,
+      "promos": -319.17,
+      "reimb": 5.4,
+      "otherIncome": 899.62,
+      "revenue": 17217.83,
+      "fees": -1872.35,
+      "shipping": -7650.44,
+      "adSpend": -1713.35,
+      "expenses": -25.46,
+      "net": 5956.23
+    }
+  },
+  "ytd": {
+    "label": "YTD 2026 (ene–oct)",
+    "es": {
+      "sales": 507020.2,
+      "refunds": -12400.27,
+      "promos": -6102.69,
+      "reimb": 887.71,
+      "otherIncome": 11530.6,
+      "revenue": 500935.55,
+      "fees": -51104.55,
+      "shipping": -203990.02,
+      "adSpend": -32856.91,
+      "expenses": 0,
+      "net": 220051.73
+    },
+    "fr": {
+      "sales": 37170.73,
+      "refunds": -955.23,
+      "promos": -730.75,
+      "reimb": 44.8,
+      "otherIncome": 2034.61,
+      "revenue": 37564.16,
+      "fees": -4213.41,
+      "shipping": -21229.49,
+      "adSpend": -4759.75,
+      "expenses": 0,
+      "net": 8052.65
+    }
+  },
+  "y2025": {
+    "label": "Todo 2025",
+    "es": {
+      "sales": 491061.02,
+      "refunds": -11188.47,
+      "promos": -6768.89,
+      "reimb": 410.81,
+      "otherIncome": 9215.05,
+      "revenue": 482729.52,
+      "fees": -89335.04,
+      "shipping": -200912.24,
+      "adSpend": -30968.07,
+      "expenses": -996.86,
+      "net": 160517.31
+    },
+    "fr": {
+      "sales": 51378.57,
+      "refunds": -1482.14,
+      "promos": -647.2,
+      "reimb": 53.53,
+      "otherIncome": 1917.89,
+      "revenue": 51220.65,
+      "fees": -9278.2,
+      "shipping": -30187.57,
+      "adSpend": -5437.77,
+      "expenses": -195.45,
+      "net": 6121.66
+    }
+  }
+};
 
 function setRange(k){
 
